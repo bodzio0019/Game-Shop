@@ -9,35 +9,66 @@ img {
     height: auto;
 }
 body {
-    background-color: antiquewhite;
+    background-color: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .top {
     display: flex;
     justify-content: space-between;
     height: 100px;
-    background-color: beige;
 }
 .search {
+    display: flex;
+    align-items: center;
     height: 100%;
-    width: ;
-    background-color: aqua;
+    width: 30%;
+    padding: 1.5em 1.5em 1.5em 5em;
+}
+.search > input {
+    border: none;
+    border-bottom: 1px solid rgb(88, 88, 88);
+    height: 40px;
+    width: 80%;
+    font-size: 1rem;
+    background-color: #fff;
+}
+input:focus {
+    outline: none;
 }
 .title {
     height: 100%;
-    background-color: blue;
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    letter-spacing: 0.4rem;
 }
 .cart {
     height: 100%;
-    background-color: blueviolet;
+    width: 30%;
+    padding: 1.5em 5em 1.5em 1.5em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.cart-icon {
+    padding-right: 0.3em;
+}
+.cart-sum {
+    padding-right: 0.2em;
+}
+.cart-price {
+    font-weight: bold;
 }
 nav {
     height: 50px;
-    background-color: cadetblue;
+    background-color: rgb(185, 185, 185);
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey
 }
 main {
     display: flex;
     max-width: 1200px;
-    height: 800px;
+    min-height: 800px;
     margin: 0 auto;
 }
 aside {
@@ -47,11 +78,48 @@ aside {
 }
 article {
     min-height: 500px;
+    height: 100%;
     width: 80%;
-    background-color: aqua;
+}
+.pages {
+    width: 100%;
+    height: 50px;
+}
+.items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.game-item {
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid transparent;
+    padding: 1em 0;
+}
+.game-item:hover {
+    border: 1px solid grey;
+}
+.game-item > img {
+    width: 60%;
+    margin-bottom: 0.6em;
+}
+.game-title {
+    font-weight: bold;
+    padding-bottom: 0.3em;
+}
+.game-price {
+    padding-bottom: 0.7em;
+}
+.add-to-cart {
+    padding: 0.8em;
+    background-color: rgb(185, 185, 185);
+    border: 1px solid grey;
 }
 footer {
     height: 200px;
     width: 100%;
-    background-color: blueviolet;
+    background-color: rgb(185, 185, 185);
+    border-top: 1px solid grey;
 }
