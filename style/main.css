@@ -10,7 +10,7 @@ img {
 }
 body {
     background-color: #ffffff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 .top {
     display: flex;
@@ -42,6 +42,9 @@ input:focus {
     font-size: 2.5rem;
     letter-spacing: 0.4rem;
 }
+.title:hover {
+    cursor: pointer;
+}
 .cart {
     height: 100%;
     width: 30%;
@@ -52,6 +55,9 @@ input:focus {
 }
 .cart-icon {
     padding-right: 0.3em;
+}
+.cart-icon:hover {
+    cursor: pointer;
 }
 .cart-sum {
     padding-right: 0.2em;
@@ -70,6 +76,7 @@ main {
     max-width: 1200px;
     min-height: 800px;
     margin: 0 auto;
+    padding-bottom: 2px;
 }
 aside {
     min-height: 500px;
@@ -83,7 +90,44 @@ article {
 }
 .pages {
     width: 100%;
-    height: 50px;
+    padding: 1em 4em;
+    display: flex;
+    justify-content: space-between;
+}
+.list-sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+}
+.list-sort > p {
+    padding-right: 0.5em;
+}
+.list-sort > select {
+    font-size: 0.75rem;
+    padding: 0.4em 0.6em;
+    appearance: none;
+    border-radius: 10px;
+    background-image: linear-gradient(white, rgb(221, 221, 221) 80%);
+}
+.list-sort > select:hover {
+    cursor: pointer;
+}
+.list-pages {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+.page-number {
+    height: 30px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-number:hover {
+    cursor: pointer;
 }
 .items {
     width: 100%;
@@ -97,25 +141,42 @@ article {
     align-items: center;
     border: 1px solid transparent;
     padding: 1em 0;
+    transition: all 0.2s ease;
 }
 .game-item:hover {
-    border: 1px solid grey;
+    border: 1px solid rgb(214, 213, 213);
+    transform: scale(1.01);
+    -webkit-box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
 }
 .game-item > img {
     width: 60%;
     margin-bottom: 0.6em;
 }
+.game-item > img:hover {
+    cursor: pointer;
+}
 .game-title {
     font-weight: bold;
     padding-bottom: 0.3em;
+}
+.game-title:hover {
+    cursor: pointer;
 }
 .game-price {
     padding-bottom: 0.7em;
 }
 .add-to-cart {
     padding: 0.8em;
-    background-color: rgb(185, 185, 185);
-    border: 1px solid grey;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(180, 180, 180);
+    transition: all 0.15s ease;
+    border-radius: 5px;
+}
+.add-to-cart:hover {
+    cursor: pointer;
+    background-color: rgb(220, 220, 220);
 }
 footer {
     height: 200px;
