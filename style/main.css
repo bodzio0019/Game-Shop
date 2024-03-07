@@ -9,7 +9,7 @@ img {
     height: auto;
 }
 body {
-    background-color: #ffffff;
+    background-color: #fff;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 .top {
@@ -66,10 +66,22 @@ input:focus {
     font-weight: bold;
 }
 nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
-    background-color: rgb(185, 185, 185);
     border-top: 1px solid grey;
-    border-bottom: 1px solid grey
+    background-image: linear-gradient(rgb(230, 230, 230), 20%,  #fff);
+}
+nav p {
+    padding: 0.5em 2em;
+    transition: all 0.3s ease;
+    border-radius: 23px;    
+}
+nav p:hover {
+    font-size: 1.05rem;
+    cursor: pointer;
+    background-color: rgb(212, 212, 212);
 }
 main {
     display: flex;
@@ -125,9 +137,12 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease;
 }
 .page-number:hover {
     cursor: pointer;
+    background-color: rgb(241, 241, 241);
+    border-radius: 30%;
 }
 .items {
     width: 100%;
@@ -146,6 +161,7 @@ article {
 .game-item:hover {
     border: 1px solid rgb(214, 213, 213);
     transform: scale(1.01);
+    cursor: pointer;
     -webkit-box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
@@ -154,20 +170,14 @@ article {
     width: 60%;
     margin-bottom: 0.6em;
 }
-.game-item > img:hover {
-    cursor: pointer;
-}
 .game-title {
     font-weight: bold;
     padding-bottom: 0.3em;
 }
-.game-title:hover {
-    cursor: pointer;
-}
 .game-price {
     padding-bottom: 0.7em;
 }
-.add-to-cart {
+/* .add-to-cart {
     padding: 0.8em;
     background-color: rgb(234, 234, 234);
     border: 1px solid rgb(180, 180, 180);
@@ -177,7 +187,7 @@ article {
 .add-to-cart:hover {
     cursor: pointer;
     background-color: rgb(220, 220, 220);
-}
+} */
 footer {
     height: 200px;
     width: 100%;
