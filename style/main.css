@@ -112,7 +112,73 @@ main {
 aside {
     min-height: 500px;
     width: 20%;
-    background-color: azure;
+    padding-top: 4em;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.aside-category-1 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 0.5em 0.6em 0.3em 0.6em;
+    border-radius: 5px;
+}
+.aside-category-1:hover {
+    cursor: pointer;
+    background-color: rgb(241, 241, 241);
+}
+.category-arrow-1 {
+    font-size: 1.3rem;
+    transform: rotate(90deg);
+}
+.category-arrow-turn-1 {
+    transform: rotate(-90deg);
+}
+.option-group-1 {
+    height: 102px;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+}
+.aside-hide-1 {
+    height: 0px;
+}
+.aside-category-2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 0.5em 0.6em 0.3em 0.6em;
+    border-radius: 5px;
+}
+.aside-category-2:hover {
+    cursor: pointer;
+    background-color: rgb(241, 241, 241);
+}
+.category-arrow-2 {
+    font-size: 1.3rem;
+    transform: rotate(90deg);
+}
+.category-arrow-turn-2 {
+    transform: rotate(-90deg);
+}
+.option-group-2 {
+    height: 102px;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+}
+.aside-hide-2 {
+    height: 0px;
+}
+.aside-option {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.aside-option > input {
+    transform: scale(1.2);
+    margin: 1em 1em 1em 3em;
 }
 article {
     min-height: 500px;
@@ -133,13 +199,16 @@ article {
 }
 .list-sort > p {
     padding-right: 0.5em;
+    display: flex;
+    align-items: center;
 }
 .list-sort > select {
-    font-size: 0.75rem;
-    padding: 0.4em 0.6em;
+    font-size: 0.8rem;
+    padding: 0.5em 0.7em;
     appearance: none;
+    border: none;
     border-radius: 10px;
-    background-image: linear-gradient(white, rgb(221, 221, 221) 80%);
+    background-color: rgb(235, 235, 235);
 }
 .list-sort > select:hover {
     cursor: pointer;
@@ -172,7 +241,7 @@ article {
     flex-wrap: wrap;
 }
 .game-item {
-    width: calc(100%/3);
+    width: calc(100%/4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -213,6 +282,6 @@ article {
 footer {
     height: 200px;
     width: 100%;
-    background-color: rgb(185, 185, 185);
+    background-color: #454545;
     border-top: 1px solid grey;
 }
