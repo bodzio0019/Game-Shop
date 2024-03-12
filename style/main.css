@@ -1,7 +1,10 @@
+/* --- GENERAL --- */
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    padding: env(safe-area-inset);
 }
 img {
     display: block;
@@ -12,6 +15,9 @@ body {
     background-color: #fff;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+
+/* --- HEADER --- */
+
 .top {
     display: flex;
     justify-content: space-between;
@@ -79,6 +85,9 @@ input:focus {
 .cart-price {
     font-weight: bold;
 }
+
+/* --- NAV --- */
+
 nav {
     display: flex;
     justify-content: center;
@@ -102,6 +111,9 @@ nav p:hover {
     cursor: pointer;
     background-color: rgb(212, 212, 212);
 }
+
+/* --- MAIN --- */
+
 main {
     display: flex;
     max-width: 1200px;
@@ -109,6 +121,8 @@ main {
     margin: 0 auto;
     padding-bottom: 2px;
 }
+
+/* Aside */
 aside {
     min-height: 500px;
     width: 20%;
@@ -122,7 +136,7 @@ aside {
 .aside-category-1 {
     display: flex;
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 0.5em 0.6em 0.3em 0.6em;
     border-radius: 5px;
 }
@@ -148,7 +162,7 @@ aside {
 .aside-category-2 {
     display: flex;
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 0.5em 0.6em 0.3em 0.6em;
     border-radius: 5px;
 }
@@ -164,7 +178,7 @@ aside {
     transform: rotate(-90deg);
 }
 .option-group-2 {
-    height: 102px;
+    height: 60px;
     overflow: hidden;
     transition: height 0.4s ease-in-out;
 }
@@ -174,12 +188,63 @@ aside {
 .aside-option {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
-.aside-option > input {
+.checkbox {
     transform: scale(1.2);
     margin: 1em 1em 1em 3em;
 }
+.option-quantity {
+    font-size: 0.8rem;
+    padding-left: 0.3em;
+    color: rgb(88, 88, 88);
+}
+.price-box {
+    font-size: 1rem;
+    height: 40px;
+    width: 70px;
+}
+.aside-option-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.5em 2em;
+}
+.aside-btn {
+    margin-top: 1em;
+    border-top: 1px solid rgb(88, 88, 88);
+    padding-top: 1em;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.reset {
+    width: 95%;
+    height: 40px;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    background-color: rgb(235, 235, 235);
+    border: 0px solid rgb(88, 88, 88);
+    border-radius: 10px;
+}
+.reset:hover {
+    cursor: pointer;
+}
+.filter {
+    width: 95%;
+    height: 40px;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    border: 0px solid rgb(88, 88, 88);
+    border-radius: 10px;
+}
+.filter:hover {
+    cursor: pointer;
+}
+
+/* Article */
 article {
     min-height: 500px;
     height: 100%;
@@ -262,10 +327,12 @@ article {
     margin-bottom: 0.6em;
 }
 .game-title {
+    font-size: 0.95rem;
     font-weight: bold;
     padding-bottom: 0.3em;
 }
 .game-price {
+    font-size: 0.9rem;
     padding-bottom: 0.7em;
 }
 /* .add-to-cart {
@@ -279,6 +346,9 @@ article {
     cursor: pointer;
     background-color: rgb(220, 220, 220);
 } */
+
+/* --- FOOTER --- */
+
 footer {
     height: 200px;
     width: 100%;
