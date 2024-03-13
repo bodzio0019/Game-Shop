@@ -226,22 +226,26 @@ aside {
     font-size: 1rem;
     letter-spacing: 0.05rem;
     background-color: rgb(235, 235, 235);
-    border: 0px solid rgb(88, 88, 88);
+    border: 1px solid rgba(88, 88, 88, 0);
     border-radius: 10px;
+    transition: border 0.2s ease;
 }
 .reset:hover {
     cursor: pointer;
+    border: 1px solid rgba(88, 88, 88, 255);
 }
 .filter {
     width: 95%;
     height: 40px;
     font-size: 1rem;
     letter-spacing: 0.05rem;
-    border: 0px solid rgb(88, 88, 88);
+    border: 1px solid rgba(88, 88, 88, 0);
     border-radius: 10px;
+    transition: border 0.2s ease;
 }
 .filter:hover {
     cursor: pointer;
+    border: 1px solid rgba(88, 88, 88, 255);
 }
 
 /* Article */
@@ -350,8 +354,12 @@ article {
 /* --- FOOTER --- */
 
 footer {
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
     width: 100%;
     background-color: #454545;
+    color: rgb(176, 176, 176);
     border-top: 1px solid grey;
 }
