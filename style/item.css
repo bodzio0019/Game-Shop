@@ -1,7 +1,24 @@
-/* Article */
-article {
-    padding: 3em 1em;
+/* --- MAIN --- */
+
+main {
+    display: flex;
+    flex-direction: column;
 }
+.container-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+.container-2 {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(176, 176, 176);
+}
+
+/* Article */
 .item-main-header {
     display: flex;
 }
@@ -17,11 +34,10 @@ article {
     width: 50%;
 }
 .item-main-info {
-    padding: 0 5em 2em 5em;
-    background-color: antiquewhite;
+    width: 80%;
 }
 .game-description {
-    padding: 2em 2em 1em 2em;
+    padding: 1em 2em;
     border-bottom: 1px solid rgb(88, 88, 88);
     margin-bottom: 1em;
 }
