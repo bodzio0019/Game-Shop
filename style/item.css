@@ -1,0 +1,41 @@
+/* Article */
+article {
+    padding: 3em 1em;
+}
+.item-main-header {
+    display: flex;
+}
+.item-image {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+.item-image > img {
+    width: 60%;
+}
+.item-cart {
+    width: 50%;
+}
+.item-main-info {
+    padding: 0 5em 2em 5em;
+    background-color: antiquewhite;
+}
+.game-description {
+    padding: 2em 2em 1em 2em;
+    border-bottom: 1px solid rgb(88, 88, 88);
+    margin-bottom: 1em;
+}
+.item-main-info > ul {
+    list-style-position: inside;
+}
+/* .add-to-cart {
+    padding: 0.8em;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(180, 180, 180);
+    transition: all 0.15s ease;
+    border-radius: 5px;
+}
+.add-to-cart:hover {
+    cursor: pointer;
+    background-color: rgb(220, 220, 220);
+} */
