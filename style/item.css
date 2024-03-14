@@ -114,8 +114,16 @@ main {
 .game-description-text > ul {
     list-style-position: inside;
 }
+.game-description-text > ul li {
+    margin-bottom: 0.5em;
+}
 .game-details-text {
     display: none;
+}
+.game-details-wrapper {
+    display: grid;
+    grid-template-columns: 100px 300px;
+    row-gap: 0.8em;
 }
 .active-option {
     background-color: rgb(137, 137, 137);
