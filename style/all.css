@@ -19,62 +19,43 @@ aside {
     -ms-user-select: none;
     user-select: none;
 }
-.aside-category-1 {
+.aside-category {
     display: flex;
     justify-content: space-between;
     font-size: 1.3rem;
     padding: 0.5em 0.6em 0.3em 0.6em;
     border-radius: 5px;
 }
-.aside-category-1:hover {
+.aside-category:hover {
     cursor: pointer;
     background-color: rgb(241, 241, 241);
 }
-.category-arrow-1 {
+.category-arrow {
     font-size: 1.3rem;
     transform: rotate(90deg);
 }
-.category-arrow-turn-1 {
+.category-arrow-turn {
     transform: rotate(-90deg);
 }
-.option-group-1 {
+.option-group {
     height: 102px;
     overflow: hidden;
     transition: height 0.4s ease-in-out;
 }
-.aside-hide-1 {
-    height: 0px;
-}
-.aside-category-2 {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.3rem;
-    padding: 0.5em 0.6em 0.3em 0.6em;
-    border-radius: 5px;
-}
-.aside-category-2:hover {
-    cursor: pointer;
-    background-color: rgb(241, 241, 241);
-}
-.category-arrow-2 {
-    font-size: 1.3rem;
-    transform: rotate(90deg);
-}
-.category-arrow-turn-2 {
-    transform: rotate(-90deg);
-}
 .option-group-2 {
-    height: 60px;
-    overflow: hidden;
-    transition: height 0.4s ease-in-out;
+    height: 50px;
 }
-.aside-hide-2 {
+.aside-hide {
     height: 0px;
 }
 .aside-option {
     display: flex;
     align-items: center;
     font-size: 1rem;
+}
+.aside-option-2 {
+    display: flex;
+    justify-content: space-evenly;
 }
 .checkbox {
     transform: scale(1.2);
@@ -195,8 +176,10 @@ article {
     display: flex;
     flex-wrap: wrap;
 }
-.game-item {
+.items a {
     width: calc(100%/4);
+}
+.game-item {
     display: flex;
     flex-direction: column;
     align-items: center;

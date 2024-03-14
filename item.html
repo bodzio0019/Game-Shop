@@ -23,9 +23,11 @@
                     <input type="text" spellcheck="false" placeholder="Search for a game..."/>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <div class="title">
-                    <h1><i class="fa-solid fa-gamepad" style="color: #454545;"></i><span style="color: rgb(69, 69, 69);">GAME </span><span style="color: rgb(128, 0, 0);">$HOP</span></h1>
-                </div>
+                <a href="index.html">
+                    <div class="title">
+                        <h1><i class="fa-solid fa-gamepad" style="color: #454545;"></i><span style="color: rgb(69, 69, 69);">GAME </span><span style="color: rgb(128, 0, 0);">$HOP</span></h1>
+                    </div>
+                </a>
                 <div class="cart">
                     <p class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></p><p class="cart-sum">(0)</p><p class="cart-price">0,00zł</p>
                 </div>
@@ -57,19 +59,41 @@
                         <img src="img/god.jpg" alt="Game picture" />
                     </div>
                     <div class="item-cart">
-                        Cart
+                        <h2>God of War</h2>
+                        <p class="developer">Sony Interactive Entertainment Europe</p>
+                        <p class="status"><i class="fa-solid fa-check" style="color: #048e20;"></i>Available</p>
+                        <p class="price">249,99 zł</p>
+                        <div class="cart-wrapper">
+                            <input type="number" class="add-quantity" />
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                        <p class="small-info"><i class="fa-solid fa-truck" style="color: #000000;"></i>Free shipping from 300 zł.</p>
+                        <p class="small-info"><i class="fa-solid fa-star" style="color: #000000;"></i></i>We are an authorized seller and guarantee the originality of the products offered.</p>
+                        <p class="small-info"><i class="fa-solid fa-rotate-left" style="color: #000000;"></i>Return is possible within 14 days from the date of receipt of the goods</p>
                     </div>
                 </section>
             </article>
             <article class="container-2">
                 <section class="item-main-info">
-                    <p class="game-description">Game description</p>
-                    <p>Living as a man outside the shadow of the gods, Kratos must adapt to unfamiliar lands, unexpected threats and a second chance at being a father. Together with his son Atreus, the pair will venture into the brutal realm of Midgard and fight to fulfil a deeply personal quest.</p><br />
-                    <ul>
-                        <li>Journey to a dark, elemental world of fearsome creatures – straight from the pages of Norse mythology.</li>
-                        <li>Conquer your foes in vicious close-quarters combat that rewards tactical thinking and lethal precision.
-                        <li>Discover an emotionally gripping tale of father and son, as Kratos is made to control the rage that has long defined him.</li>
-                    </ul>
+                    <div class="item-info-wrapper">
+                        <h2 class="game-description active-option">Description</h2>
+                        <h2 class="game-details">Details</h2>
+                    </div>
+                    <div class="game-description-text active-text">
+                        <p>Living as a man outside the shadow of the gods, Kratos must adapt to unfamiliar lands, unexpected threats and a second chance at being a father. Together with his son Atreus, the pair will venture into the brutal realm of Midgard and fight to fulfil a deeply personal quest.</p><br />
+                        <ul>
+                            <li>Journey to a dark, elemental world of fearsome creatures – straight from the pages of Norse mythology.</li>
+                            <li>Conquer your foes in vicious close-quarters combat that rewards tactical thinking and lethal precision.
+                            <li>Discover an emotionally gripping tale of father and son, as Kratos is made to control the rage that has long defined him.</li>
+                        </ul>
+                    </div>
+                    <div class="game-details-text">
+                        <ul>
+                            <li>Journey to a dark, elemental world of fearsome creatures – straight from the pages of Norse mythology.</li>
+                            <li>Conquer your foes in vicious close-quarters combat that rewards tactical thinking and lethal precision.
+                            <li>Discover an emotionally gripping tale of father and son, as Kratos is made to control the rage that has long defined him.</li>
+                        </ul>
+                    </div>
                 </section>
             </article>
         </main>
@@ -77,6 +101,6 @@
         <footer>
             <p>&copy; 2024 All rights reserved</p>
         </footer>
-        <script src="script/script.js"></script>
+        <script src="script/item.js"></script>
     </body>
 </html>
