@@ -70,11 +70,16 @@ input:focus {
     cursor: pointer;
 }
 .cart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     height: 100%;
     width: 20%;
     padding: 1.5em 5em 1.5em 0;
+}
+.cart a {
+    height: 30px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 }
 .cart-icon {

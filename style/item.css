@@ -8,7 +8,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2em 0;
+    padding: 2em 0 4em 0;
 }
 .container-2 {
     width: 100%;
@@ -18,7 +18,9 @@ main {
     background-color: rgb(176, 176, 176);
 }
 
-/* Article */
+/* --- ARTICLE --- */
+
+/* Item header */
 .item-main-header {
     display: flex;
 }
@@ -82,6 +84,8 @@ main {
     font-size: 0.8rem;
     padding-bottom: 1.6em;
 }
+
+/* Item info */
 .item-main-info {
     width: 80%;
 }

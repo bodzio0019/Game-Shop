@@ -3,12 +3,12 @@
 .container-1 {
     display: flex;
     max-width: 1200px;
-    min-height: 400px;
     margin: 0 auto;
     padding-bottom: 2px;
 }
 
-/* Aside */
+/* --- ASIDE --- */
+
 aside {
     min-height: 500px;
     width: 20%;
@@ -115,12 +115,15 @@ aside {
     border: 1px solid rgba(88, 88, 88, 255);
 }
 
-/* Article */
+/* --- ARTICLE --- */
+
 article {
     min-height: 500px;
     height: 100%;
     width: 80%;
 }
+
+/* Sort and pages */
 .pages {
     width: 100%;
     padding: 1em 4em;
@@ -171,6 +174,8 @@ article {
     background-color: rgb(241, 241, 241);
     border-radius: 30%;
 }
+
+/* Items */
 .items {
     width: 100%;
     display: flex;
