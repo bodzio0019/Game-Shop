@@ -11,8 +11,8 @@
         <meta name="keywords" content="Game Shop, Project, Programming" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
         <script src="https://kit.fontawesome.com/2e6efd609f.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style/main.css" />
-        <link rel="stylesheet" href="style/cart-empty.css" />
+        <link rel="stylesheet" href="../style/main.css" />
+        <link rel="stylesheet" href="../style/item.css" />
     </head>
     <!-- BODY -->
     <body>
@@ -23,13 +23,13 @@
                     <input type="text" spellcheck="false" placeholder="Search for a game..."/>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <a href="index.html">
+                <a href="../index.html">
                     <div class="title">
                         <h1><i class="fa-solid fa-gamepad" style="color: #454545;"></i><span style="color: rgb(69, 69, 69);">GAME </span><span style="color: rgb(128, 0, 0);">$HOP</span></h1>
                     </div>
                 </a>
                 <div class="cart">
-                    <a href="cart.html"><p class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></p><p class="cart-sum">(0)</p><p class="cart-price">0.00 zł</p></a>
+                    <a href="../cart.html"><p class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></p><p class="cart-sum">(0)</p><p class="cart-price">0.00 zł</p></a>
                 </div>
             </section>
             <!-- Nav -->
@@ -54,16 +54,20 @@
         <main>
             <!-- Article -->
             <article class="container-1">
-                <i class="fa-solid fa-cart-arrow-down" style="color: #000000;"></i>
-                <h2 class="cart-header">Your cart is empty.</h2>
-                <p class="cart-text">Add your products to it to start placing your order.</p>
-                <a href="index.html"><button class="start">Start shopping</button></a>
+                <!-- Item header -->
+                <section class="item-main-header">
+                </section>
+            </article>
+            <!-- Item info -->
+            <article class="container-2">
+                <section class="item-main-info">
+                </section>
             </article>
         </main>
         <!-- Footer -->
         <footer>
             <p>&copy; 2024 All rights reserved</p>
         </footer>
-        <script src="scripts/index.js"></script>
+        <script src="../scripts/item.js" type="module"></script>
     </body>
 </html>

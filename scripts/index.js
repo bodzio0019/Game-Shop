@@ -19,9 +19,9 @@ function renderItems() {
         <div class="game-item">
         <img src="img/${data.image}.jpg" alt="Game picture" />
         <p class="game-title">${data.name}</p>
-        <p class="game-price">${data.zloty},${data.grosze} zł</p>
+        <p class="game-price">${(data.price/100).toFixed(2)} zł</p>
         </div>
-        </a>`
+        </a>`;
     });
     
     (function display() {

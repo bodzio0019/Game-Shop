@@ -3,6 +3,7 @@
 .container-1 {
     display: flex;
     max-width: 1200px;
+    min-height: 650px;
     margin: 0 auto;
     padding-bottom: 2px;
 }
