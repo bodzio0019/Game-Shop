@@ -1,6 +1,9 @@
 import { data } from "../data/data.js";
 
 // On start
+const deals = data.filter((item) => {
+    return (item.platform[0] === "PS5")||(item.platform[1] === "PS5");
+});
 renderItems();
 
 // Aside
@@ -14,7 +17,7 @@ document.querySelectorAll(".aside-category").forEach( (btn) => {
 // Items
 function renderItems() {
     let html = ``;
-    data.forEach( (data) => {
+    deals.forEach( (data) => {
         if (data.discount === 0) {
             html +=`<a href="item-pages/${data.page}.html">
             <div class="game-item">

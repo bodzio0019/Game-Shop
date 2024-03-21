@@ -94,6 +94,8 @@ input:focus {
 }
 .cart-price {
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 /* --- NAV --- */

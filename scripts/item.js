@@ -52,6 +52,10 @@ function renderItem() {
     if(item.platform[1]) {
         document.querySelector(".js-selector").innerHTML = `${item.platform[0]}, ${item.platform[1]}`;
     };
+
+    if(item.discount !== 0) {
+        document.querySelector(".price").innerHTML = `<span style="color: rgb(190, 43, 43);">${(item.discount/100).toFixed(2)} zł</span>&nbsp;<span style="text-decoration: line-through; font-size: 1.6rem;">${(item.price/100).toFixed(2)} zł</span>`
+    };
 };
 
 // Item info
