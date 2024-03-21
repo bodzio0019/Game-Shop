@@ -207,7 +207,8 @@ article {
 .game-title {
     font-size: 0.95rem;
     font-weight: bold;
-    padding-bottom: 0.3em;
+    padding: 0 1em 0.3em 1em;
+    text-align: center;
 }
 .game-price {
     font-size: 0.9rem;
