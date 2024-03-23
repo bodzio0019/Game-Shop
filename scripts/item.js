@@ -6,7 +6,7 @@ renderItem();
 // Item render
 function renderItem() {
     const result = data.filter(obj => {
-        return obj.pathname === location.pathname;
+        return location.pathname.includes(obj.page);
       });
     const item = result[0];
     const htmlHeader = `<div class="item-image">

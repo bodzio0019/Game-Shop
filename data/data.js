@@ -1,5 +1,4 @@
 export let data = [{
-        pathname: "/item-pages/god-of-war.html",
         page: "god-of-war",
         image: "godOfWar",
         name: "God of War",
@@ -18,7 +17,6 @@ export let data = [{
         sort: 20191004,
         genre: "Action",
     },{
-        pathname: "/item-pages/diablo-4.html",
         page: "diablo-4",
         image: "diablo4",
         name: "Diablo IV - Standard Edition",
@@ -39,7 +37,6 @@ export let data = [{
         sort: 20230605,
         genre: "RPG",
     },{
-        pathname: "/item-pages/battlefield-2042.html",
         page: "battlefield-2042",
         image: "battlefield2042",
         name: "Battlefield 2042",
@@ -56,7 +53,6 @@ export let data = [{
         sort: 20211119,
         genre: "FPS",
     },{
-        pathname: "/item-pages/uncharted-collection.html",
         page: "uncharted-collection",
         image: "unchartedCollection",
         name: "Uncharted: The Nathan Drake Collection",
@@ -73,7 +69,6 @@ export let data = [{
         sort: 20151007,
         genre: "Action",
     },{
-        pathname: "/item-pages/demons-souls.html",
         page: "demons-souls",
         image: "demonsSouls",
         name: "Demon's Souls",
@@ -89,7 +84,6 @@ export let data = [{
         sort: 20201112,
         genre: "RPG",
     },{
-        pathname: "/item-pages/returnal.html",
         page: "returnal",
         image: "returnal",
         name: "Returnal",
@@ -114,7 +108,6 @@ export let data = [{
         sort: 20210430,
         genre: "FPS",
     },{
-        pathname: "/item-pages/marvels-spider-man.html",
         page: "marvels-spider-man",
         image: "marvelsSpiderMan",
         name: "Marvel’s Spider-Man: Game of the Year Edition",
@@ -132,7 +125,6 @@ export let data = [{
         sort: 20190828,
         genre: "Action",
     },{
-        pathname: "/item-pages/assassins-creed-origins.html",
         page: "assassins-creed-origins",
         image: "assassinsCreedOrigins",
         name: "Assassin's Creed Origins",
@@ -150,7 +142,6 @@ export let data = [{
         sort: 20171027,
         genre: "RPG",
     },{
-        pathname: "/item-pages/call-of-duty-modern-warfare.html",
         page: "call-of-duty-modern-warfare",
         image: "callOfDutyModerWarfare",
         name: "Call of Duty: Modern Warfare",
@@ -170,7 +161,6 @@ export let data = [{
         sort: 20191025,
         genre: "FPS",
     },{
-        pathname: "/item-pages/ratchet-clank-rift-apart.html",
         page: "ratchet-clank-rift-apart",
         image: "ratchetClankRiftApart",
         name: "Ratchet & Clank: Rift Apart",
@@ -184,7 +174,6 @@ export let data = [{
         sort: 20210611,
         genre: "Action",
     },{
-        pathname: "/item-pages/elden-ring.html",
         page: "elden-ring",
         image: "eldenRing",
         name: "Elden Ring",
@@ -203,7 +192,6 @@ export let data = [{
         sort: 20220225,
         genre: "RPG",
     },{
-        pathname: "/item-pages/cyberpunk-2077.html",
         page: "cyberpunk-2077",
         image: "cyberpunk2077",
         name: "Cyberpunk 2077",
@@ -220,7 +208,6 @@ export let data = [{
         sort: 20220215,
         genre: "FPS",
     },{
-        pathname: "/item-pages/grand-theft-auto-V.html",
         page: "grand-theft-auto-V",
         image: "grandTheftAutoV",
         name: "Grand Theft Auto V",
@@ -234,7 +221,6 @@ export let data = [{
         sort: 20141118,
         genre: "Action",
     },{
-        pathname: "/item-pages/the-witcher-3-wild-hunt.html",
         page: "the-witcher-3-wild-hunt",
         image: "theWitcher3WildHunt",
         name: "The Witcher 3: Wild Hunt",
