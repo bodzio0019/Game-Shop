@@ -15,6 +15,94 @@ document.querySelectorAll(".aside-category").forEach( (btn) => {
     });
 });
 
+document.querySelector(".reset").addEventListener("click", () => {
+    location.reload();
+});
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let tempData = [];
+    if (!form.action.checked && !form.rpg.checked && !form.fps.checked && (form.min.value == false) && (form.max.value == false)) {
+        location.reload();
+    } else {
+        if (!form.action.checked && !form.rpg.checked && !form.fps.checked) {
+            tempData = data;
+            if (!(form.min.value == "") && !(form.max.value == "")) {
+                const min = form.min.value + "00";
+                const max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    let price = item.discount || item.price;
+                    return price >= min && price <= max;
+                });
+                tempData = valueData;
+            };
+            if (!(form.min.value == "") && (form.max.value == "")) {
+                const min = form.min.value + "00";
+                const valueData = tempData.filter((item) => {
+                    let price = item.discount || item.price;
+                    return price >= min;
+                });
+                tempData = valueData;
+            };
+            if ((form.min.value == "") && !(form.max.value == "")) {
+                const max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    let price = item.discount || item.price;
+                    return price <= max;
+                });
+                tempData = valueData;
+            };
+        } else {
+            if (form.action.checked === true) {
+                const sortedArray = data.filter((item) => {
+                    return item.genre === "Action";
+                });
+                tempData.push(...sortedArray);
+            };
+            if (form.rpg.checked === true) {
+                const sortedArray = data.filter((item) => {
+                    return item.genre === "RPG";
+                });
+                tempData.push(...sortedArray);
+            };
+            if (form.fps.checked === true) {
+                const sortedArray = data.filter((item) => {
+                    return item.genre === "FPS";
+                });
+                tempData.push(...sortedArray);
+            };
+            if (!(form.min.value == "") && !(form.max.value == "")) {
+                const min = form.min.value + "00";
+                const max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    let price = item.discount || item.price;
+                    return price >= min && price <= max;
+                });
+                tempData = valueData;
+            };
+            if (!(form.min.value == "") && (form.max.value == "")) {
+                const min = form.min.value + "00";
+                const valueData = tempData.filter((item) => {
+                    let price = item.discount || item.price;
+                    return price >= min;
+                });
+                tempData = valueData;
+            };
+            if ((form.min.value == "") && !(form.max.value == "")) {
+                const max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    let price = item.discount || item.price;
+                    return price <= max;
+                });
+                tempData = valueData;
+            };
+        };
+        document.querySelector(".sort-disable").removeAttribute("disabled", "");
+        document.querySelector(".sort-disable").selected = true;
+        asideData = tempData;
+        renderItems(tempData);
+    };
+});
+
 // Sort
 select.addEventListener("change", () => {
     document.querySelector(".sort-disable").setAttribute("disabled", "");
@@ -29,37 +117,17 @@ function asideSort(data) {
     switch(select.value) {
         case "lowest price":
             data.sort((a, b) => { 
-                let first = "";
-                let second = "";
-                if(a.discount !== 0) {
-                    first = a.discount;
-                } else {
-                    first = a.price;
-                };
-                if(b.discount !== 0) {
-                    second = b.discount;
-                } else {
-                    second = b.price;
-                };
-               return first - second;
+                let first = a.discount || a.price;
+                let second = b.discount || b.price;
+                return first - second;
             });
             renderItems(data);
             break;
         case "highest price":
             data.sort((a, b) => { 
-                let first = "";
-                let second = "";
-                if(a.discount !== 0) {
-                    first = a.discount;
-                } else {
-                    first = a.price;
-                };
-                if(b.discount !== 0) {
-                    second = b.discount;
-                } else {
-                    second = b.price;
-                };
-               return second - first;
+                let first = a.discount || a.price;
+                let second = b.discount || b.price;
+                return second - first;
             });
             renderItems(data);
             break;

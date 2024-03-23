@@ -26,24 +26,27 @@ form.addEventListener("submit", (e) => {
         if (!form.action.checked && !form.rpg.checked && !form.fps.checked) {
             tempData = data;
             if (!(form.min.value == "") && !(form.max.value == "")) {
-                let min = form.min.value + "00";
-                let max = form.max.value + "00";
+                const min = form.min.value + "00";
+                const max = form.max.value + "00";
                 const valueData = tempData.filter((item) => {
-                    return item.price >= min && item.price <= max;
+                    let price = item.discount || item.price;
+                    return price >= min && price <= max;
                 });
                 tempData = valueData;
             };
-            if (!(form.min.value == "")) {
-                let min = form.min.value + "00";
+            if (!(form.min.value == "") && (form.max.value == "")) {
+                const min = form.min.value + "00";
                 const valueData = tempData.filter((item) => {
-                    return item.price >= min;
+                    let price = item.discount || item.price;
+                    return price >= min;
                 });
                 tempData = valueData;
             };
-            if (!(form.max.value == "")) {
-                let max = form.max.value + "00";
+            if ((form.min.value == "") && !(form.max.value == "")) {
+                const max = form.max.value + "00";
                 const valueData = tempData.filter((item) => {
-                    return item.price <= max;
+                    let price = item.discount || item.price;
+                    return price <= max;
                 });
                 tempData = valueData;
             };
@@ -67,24 +70,27 @@ form.addEventListener("submit", (e) => {
                 tempData.push(...sortedArray);
             };
             if (!(form.min.value == "") && !(form.max.value == "")) {
-                let min = form.min.value + "00";
-                let max = form.max.value + "00";
+                const min = form.min.value + "00";
+                const max = form.max.value + "00";
                 const valueData = tempData.filter((item) => {
-                    return item.price >= min && item.price <= max;
+                    let price = item.discount || item.price;
+                    return price >= min && price <= max;
                 });
                 tempData = valueData;
             };
-            if (!(form.min.value == "")) {
-                let min = form.min.value + "00";
+            if (!(form.min.value == "") && (form.max.value == "")) {
+                const min = form.min.value + "00";
                 const valueData = tempData.filter((item) => {
-                    return item.price >= min;
+                    let price = item.discount || item.price;
+                    return price >= min;
                 });
                 tempData = valueData;
             };
-            if (!(form.max.value == "")) {
-                let max = form.max.value + "00";
+            if ((form.min.value == "") && !(form.max.value == "")) {
+                const max = form.max.value + "00";
                 const valueData = tempData.filter((item) => {
-                    return item.price <= max;
+                    let price = item.discount || item.price;
+                    return price <= max;
                 });
                 tempData = valueData;
             };
@@ -110,37 +116,17 @@ function asideSort(data) {
     switch(select.value) {
         case "lowest price":
             data.sort((a, b) => { 
-                let first = "";
-                let second = "";
-                if(a.discount !== 0) {
-                    first = a.discount;
-                } else {
-                    first = a.price;
-                };
-                if(b.discount !== 0) {
-                    second = b.discount;
-                } else {
-                    second = b.price;
-                };
-               return first - second;
+                let first = a.discount || a.price;
+                let second = b.discount || b.price;
+                return first - second;
             });
             renderItems(data);
             break;
         case "highest price":
             data.sort((a, b) => { 
-                let first = "";
-                let second = "";
-                if(a.discount !== 0) {
-                    first = a.discount;
-                } else {
-                    first = a.price;
-                };
-                if(b.discount !== 0) {
-                    second = b.discount;
-                } else {
-                    second = b.price;
-                };
-               return second - first;
+                let first = a.discount || a.price;
+                let second = b.discount || b.price;
+                return second - first;
             });
             renderItems(data);
             break;
