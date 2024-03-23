@@ -1,8 +1,11 @@
-import { data } from "../data/data.js";
+import { data as data1 } from "../data/data.js";
 
 // On start
-data.sort((a, b) => b.sort - a.sort );
+const data = data1.sort((a, b) => b.sort - a.sort).slice(0, 7);
 renderItems(data);
+const form = document.forms.aside;
+let asideData = [];
+const select = document.querySelector("#sort");
 
 // Aside
 document.querySelectorAll(".aside-category").forEach( (btn) => {
@@ -13,13 +16,17 @@ document.querySelectorAll(".aside-category").forEach( (btn) => {
 });
 
 // Sort
-const sortedData = structuredClone(data);
-const select = document.querySelector("#sort");
 select.addEventListener("change", () => {
+    document.querySelector(".sort-disable").setAttribute("disabled", "");
+    if (asideData == 0) {
+        asideSort(data);
+    } else {
+        asideSort(asideData);
+    }
+});
+
+function asideSort(data) {
     switch(select.value) {
-        case "bestsellers":
-            renderItems(sortedData);
-            break;
         case "lowest price":
             data.sort((a, b) => { 
                 let first = "";
@@ -65,29 +72,29 @@ select.addEventListener("change", () => {
             renderItems(data);
             break;
     };
-});
+};
 
 // Items
 function renderItems(data) {
     let html = ``;
-    for(let i = 0; i < 7; i++) {
-        if (data[i].discount === 0) {
-            html +=`<a href="item-pages/${data[i].page}.html">
+    data.forEach( (data) => {
+        if (data.discount === 0) {
+            html +=`<a href="item-pages/${data.page}.html">
             <div class="game-item">
-            <img src="img/${data[i].image}.jpg" alt="Game picture" />
-            <p class="game-title">${data[i].name}</p>
-            <p class="game-price">${(data[i].price/100).toFixed(2)} zł</p>
+            <img src="img/${data.image}.jpg" alt="Game picture" />
+            <p class="game-title">${data.name}</p>
+            <p class="game-price">${(data.price/100).toFixed(2)} zł</p>
             </div>
             </a>`;
         } else {
-            html +=`<a href="item-pages/${data[i].page}.html">
+            html +=`<a href="item-pages/${data.page}.html">
             <div class="game-item">
-            <img src="img/${data[i].image}.jpg" alt="Game picture" />
-            <p class="game-title">${data[i].name}</p>
-            <p class="game-price"><span style="color: rgb(190, 43, 43);">${(data[i].discount/100).toFixed(2)} zł</span>&nbsp;<span style="text-decoration: line-through; font-size: 0.8rem;">${(data[i].price/100).toFixed(2)} zł</span></p>
+            <img src="img/${data.image}.jpg" alt="Game picture" />
+            <p class="game-title">${data.name}</p>
+            <p class="game-price"><span style="color: rgb(190, 43, 43);">${(data.discount/100).toFixed(2)} zł</span>&nbsp;<span style="text-decoration: line-through; font-size: 0.8rem;">${(data.price/100).toFixed(2)} zł</span></p>
             </div>
             </a>`;
         };
-    };
+    });
     document.querySelector(".items").innerHTML = html;
 };

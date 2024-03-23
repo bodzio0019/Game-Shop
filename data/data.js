@@ -1,4 +1,4 @@
-export const data = [{
+export let data = [{
         pathname: "/item-pages/god-of-war.html",
         page: "god-of-war",
         image: "godOfWar",

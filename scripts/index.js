@@ -2,6 +2,9 @@ import { data } from "../data/data.js";
 
 // On start
 renderItems(data);
+const form = document.forms.aside;
+let asideData = [];
+const select = document.querySelector("#sort");
 
 // Aside
 document.querySelectorAll(".aside-category").forEach( (btn) => {
@@ -11,14 +14,100 @@ document.querySelectorAll(".aside-category").forEach( (btn) => {
     });
 });
 
+document.querySelector(".reset").addEventListener("click", () => {
+    location.reload();
+});
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let tempData = [];
+    if (!form.action.checked && !form.rpg.checked && !form.fps.checked && (form.min.value == false) && (form.max.value == false)) {
+        location.reload();
+    } else {
+        if (!form.action.checked && !form.rpg.checked && !form.fps.checked) {
+            tempData = data;
+            if (!(form.min.value == "") && !(form.max.value == "")) {
+                let min = form.min.value + "00";
+                let max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    return item.price >= min && item.price <= max;
+                });
+                tempData = valueData;
+            };
+            if (!(form.min.value == "")) {
+                let min = form.min.value + "00";
+                const valueData = tempData.filter((item) => {
+                    return item.price >= min;
+                });
+                tempData = valueData;
+            };
+            if (!(form.max.value == "")) {
+                let max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    return item.price <= max;
+                });
+                tempData = valueData;
+            };
+        } else {
+            if (form.action.checked === true) {
+                const sortedArray = data.filter((item) => {
+                    return item.genre === "Action";
+                });
+                tempData.push(...sortedArray);
+            };
+            if (form.rpg.checked === true) {
+                const sortedArray = data.filter((item) => {
+                    return item.genre === "RPG";
+                });
+                tempData.push(...sortedArray);
+            };
+            if (form.fps.checked === true) {
+                const sortedArray = data.filter((item) => {
+                    return item.genre === "FPS";
+                });
+                tempData.push(...sortedArray);
+            };
+            if (!(form.min.value == "") && !(form.max.value == "")) {
+                let min = form.min.value + "00";
+                let max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    return item.price >= min && item.price <= max;
+                });
+                tempData = valueData;
+            };
+            if (!(form.min.value == "")) {
+                let min = form.min.value + "00";
+                const valueData = tempData.filter((item) => {
+                    return item.price >= min;
+                });
+                tempData = valueData;
+            };
+            if (!(form.max.value == "")) {
+                let max = form.max.value + "00";
+                const valueData = tempData.filter((item) => {
+                    return item.price <= max;
+                });
+                tempData = valueData;
+            };
+        };
+        document.querySelector(".sort-disable").removeAttribute("disabled", "");
+        document.querySelector(".sort-disable").selected = true;
+        asideData = tempData;
+        renderItems(tempData);
+    };
+});
+
 // Sort
-const sortedData = structuredClone(data);
-const select = document.querySelector("#sort");
 select.addEventListener("change", () => {
+    document.querySelector(".sort-disable").setAttribute("disabled", "");
+    if (asideData == 0) {
+        asideSort(data);
+    } else {
+        asideSort(asideData);
+    }
+});
+
+function asideSort(data) {
     switch(select.value) {
-        case "bestsellers":
-            renderItems(sortedData);
-            break;
         case "lowest price":
             data.sort((a, b) => { 
                 let first = "";
@@ -64,7 +153,7 @@ select.addEventListener("change", () => {
             renderItems(data);
             break;
     };
-});
+};
 
 // Items
 function renderItems(data) {

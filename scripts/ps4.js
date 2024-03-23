@@ -5,6 +5,9 @@ const data = data1.filter((item) => {
     return (item.platform[0] === "PS4")||(item.platform[1] === "PS4");
 });
 renderItems(data);
+const form = document.forms.aside;
+let asideData = [];
+const select = document.querySelector("#sort");
 
 // Aside
 document.querySelectorAll(".aside-category").forEach( (btn) => {
@@ -15,13 +18,17 @@ document.querySelectorAll(".aside-category").forEach( (btn) => {
 });
 
 // Sort
-const sortedData = structuredClone(data);
-const select = document.querySelector("#sort");
 select.addEventListener("change", () => {
+    document.querySelector(".sort-disable").setAttribute("disabled", "");
+    if (asideData == 0) {
+        asideSort(data);
+    } else {
+        asideSort(asideData);
+    }
+});
+
+function asideSort(data) {
     switch(select.value) {
-        case "bestsellers":
-            renderItems(sortedData);
-            break;
         case "lowest price":
             data.sort((a, b) => { 
                 let first = "";
@@ -67,7 +74,7 @@ select.addEventListener("change", () => {
             renderItems(data);
             break;
     };
-});
+};
 
 // Items
 function renderItems(data) {
