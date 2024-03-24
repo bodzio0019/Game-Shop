@@ -38,47 +38,49 @@ aside {
     transform: rotate(-90deg);
 }
 .option-group {
-    height: 102px;
+    height: 120px;
     overflow: hidden;
     transition: height 0.4s ease-in-out;
 }
 .option-group-2 {
-    height: 50px;
+    height: 60px;
+    padding: 0 0.6em;
 }
 .aside-hide {
     height: 0px;
 }
 .aside-option {
+    height: 40px;
     display: flex;
     align-items: center;
     font-size: 1rem;
 }
 .aside-option-2 {
+    height: 60px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    padding: 0 1em;
 }
 .checkbox {
     transform: scale(1.2);
     margin: 1em 1em 1em 3em;
-}
-.option-quantity {
-    font-size: 0.8rem;
-    padding-left: 0.3em;
-    color: rgb(88, 88, 88);
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
 }
 .price-box {
     font-size: 1rem;
     height: 40px;
     width: 70px;
+    border: 1px solid rgb(214, 214, 214);
 }
-.aside-option-2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0.5em 2em;
+.price-box::placeholder {
+    text-align: center;
+    font-size: 0.9rem;
 }
 .aside-btn {
-    margin-top: 1em;
+    margin-top: 0.5em;
     border-top: 1px solid rgb(88, 88, 88);
     padding-top: 1em;
     height: 120px;
@@ -109,6 +111,7 @@ aside {
     border: 1px solid rgba(88, 88, 88, 0);
     border-radius: 10px;
     transition: border 0.2s ease;
+    background-color: #C0C0C0;
 }
 .filter:hover {
     cursor: pointer;
