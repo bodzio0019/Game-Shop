@@ -1,10 +1,12 @@
 import { data as data1 } from "../data/data.js";
+import { cart, renderCartIcon } from "../data/cart.js";
 
 // On start
 const data = data1.filter((item) => {
     return item.discount !== 0;
 });
 renderItems(data);
+renderCartIcon();
 const form = document.forms.aside;
 let asideData = [];
 const select = document.querySelector("#sort");

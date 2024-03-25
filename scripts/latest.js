@@ -1,8 +1,10 @@
 import { data as data1 } from "../data/data.js";
+import { cart, renderCartIcon } from "../data/cart.js";
 
 // On start
 const data = data1.sort((a, b) => b.sort - a.sort).slice(0, 7);
 renderItems(data);
+renderCartIcon();
 const form = document.forms.aside;
 let asideData = [];
 const select = document.querySelector("#sort");

@@ -1,14 +1,17 @@
 import { data } from "../data/data.js";
+import { cart, renderCartIcon } from "../data/cart.js";
 
 // On start
+let item = [];
 renderItem();
+renderCartIcon();
 
 // Item render
 function renderItem() {
     const result = data.filter(obj => {
         return location.pathname.includes(obj.page);
       });
-    const item = result[0];
+    item = result[0];
     const htmlHeader = `<div class="item-image">
     <img src="../img/${item.image}.jpg" alt="Game picture" />
     </div>
@@ -18,8 +21,10 @@ function renderItem() {
     <p class="status"><i class="fa-solid fa-check" style="color: #048e20;"></i>Available</p>
     <p class="price">${(item.price/100).toFixed(2)} zł</p>
     <div class="cart-wrapper">
-        <input type="number" class="add-quantity" />
-        <button class="add-to-cart">Add to cart</button>
+    <form name="quantity" action="" method="get">
+        <input type="number" name="quantity" class="add-quantity" min="1" max="100" value="1"/>
+        <button type="submit" class="add-to-cart">Add to cart</button>
+    </form>
     </div>
     <p class="small-info"><i class="fa-solid fa-truck" style="color: #000000;"></i>Free shipping from 300 zł.</p>
     <p class="small-info"><i class="fa-solid fa-star" style="color: #000000;"></i></i>We are an authorized seller and guarantee the originality of the products offered.</p>
@@ -70,4 +75,15 @@ document.querySelector(".game-details").addEventListener("click", () => {
     document.querySelector(".game-details").classList.add("active-option");
     document.querySelector(".game-description-text").classList.remove("active-text");
     document.querySelector(".game-details-text").classList.add("active-text");
+});
+
+// Cart
+const form = document.forms.quantity;
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    for (let i = 0; i < form.quantity.value; i++) {
+        cart.push(item);
+    };
+    renderCartIcon();
+    localStorage.setItem("cart", JSON.stringify(cart));
 });

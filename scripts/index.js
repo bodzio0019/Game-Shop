@@ -1,7 +1,9 @@
 import { data } from "../data/data.js";
+import { cart, renderCartIcon } from "../data/cart.js";
 
 // On start
 renderItems(data);
+renderCartIcon();
 const form = document.forms.aside;
 let asideData = [];
 const select = document.querySelector("#sort");
