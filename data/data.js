@@ -16,6 +16,7 @@ export const data = [{
         release: "4/10/2019",
         sort: 20191004,
         genre: "Action",
+        quantity: 1
     },{
         page: "diablo-4",
         image: "diablo4",
@@ -36,6 +37,7 @@ export const data = [{
         release: "5/6/2023",
         sort: 20230605,
         genre: "RPG",
+        quantity: 1
     },{
         page: "battlefield-2042",
         image: "battlefield2042",
@@ -52,6 +54,7 @@ export const data = [{
         release: "19/11/2021",
         sort: 20211119,
         genre: "FPS",
+        quantity: 1
     },{
         page: "uncharted-collection",
         image: "unchartedCollection",
@@ -68,6 +71,7 @@ export const data = [{
         release: "7/10/2015",
         sort: 20151007,
         genre: "Action",
+        quantity: 1
     },{
         page: "demons-souls",
         image: "demonsSouls",
@@ -83,6 +87,7 @@ export const data = [{
         release: "12/11/2020",
         sort: 20201112,
         genre: "RPG",
+        quantity: 1
     },{
         page: "returnal",
         image: "returnal",
@@ -107,6 +112,7 @@ export const data = [{
         release: "30/4/2021",
         sort: 20210430,
         genre: "FPS",
+        quantity: 1
     },{
         page: "marvels-spider-man",
         image: "marvelsSpiderMan",
@@ -124,6 +130,7 @@ export const data = [{
         release: "28/8/2019",
         sort: 20190828,
         genre: "Action",
+        quantity: 1
     },{
         page: "assassins-creed-origins",
         image: "assassinsCreedOrigins",
@@ -141,6 +148,7 @@ export const data = [{
         release: "27/10/2017",
         sort: 20171027,
         genre: "RPG",
+        quantity: 1
     },{
         page: "call-of-duty-modern-warfare",
         image: "callOfDutyModerWarfare",
@@ -160,6 +168,7 @@ export const data = [{
         release: "25/10/2019",
         sort: 20191025,
         genre: "FPS",
+        quantity: 1
     },{
         page: "ratchet-clank-rift-apart",
         image: "ratchetClankRiftApart",
@@ -173,6 +182,7 @@ export const data = [{
         release: "11/6/2021",
         sort: 20210611,
         genre: "Action",
+        quantity: 1
     },{
         page: "elden-ring",
         image: "eldenRing",
@@ -191,6 +201,7 @@ export const data = [{
         release: "25/2/2022",
         sort: 20220225,
         genre: "RPG",
+        quantity: 1
     },{
         page: "cyberpunk-2077",
         image: "cyberpunk2077",
@@ -207,6 +218,7 @@ export const data = [{
         release: "15/2/2022",
         sort: 20220215,
         genre: "FPS",
+        quantity: 1
     },{
         page: "grand-theft-auto-V",
         image: "grandTheftAutoV",
@@ -220,6 +232,7 @@ export const data = [{
         release: "18/11/2014",
         sort: 20141118,
         genre: "Action",
+        quantity: 1
     },{
         page: "the-witcher-3-wild-hunt",
         image: "theWitcher3WildHunt",
@@ -234,4 +247,5 @@ export const data = [{
         release: "14/12/2022",
         sort: 20221214,
         genre: "RPG",
+        quantity: 1
     }];

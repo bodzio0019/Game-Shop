@@ -76,7 +76,17 @@ function renderItem() {
 const form = document.forms.quantity;
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    for (let i = 0; i < form.quantity.value; i++) {
+    let matchItem;
+
+    cart.forEach( (i) => {
+        if(i.name === item.name) {
+           matchItem = i; 
+        };
+    });
+    
+    if(matchItem) {
+        matchItem.quantity += +form.quantity.value;
+    } else {
         cart.push(item);
     };
     renderCartIcon();
