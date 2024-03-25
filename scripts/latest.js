@@ -9,6 +9,15 @@ const form = document.forms.aside;
 let asideData = [];
 const select = document.querySelector("#sort");
 
+// Cart
+document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
+    if(cart.length) {
+        location.href = "cart.html";
+    } else {
+        location.href = "cart-empty.html";
+    };
+});
+
 // Aside
 document.querySelectorAll(".aside-category").forEach( (btn) => {
     btn.addEventListener("click", function() {

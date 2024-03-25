@@ -6,6 +6,15 @@ let item = [];
 renderItem();
 renderCartIcon();
 
+// Cart icon
+document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
+    if(cart.length) {
+        location.href = "../cart.html";
+    } else {
+        location.href = "../cart-empty.html";
+    };
+});
+
 // Item render
 function renderItem() {
     const result = data.filter(obj => {
@@ -63,6 +72,17 @@ function renderItem() {
     };
 };
 
+// Cart
+const form = document.forms.quantity;
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    for (let i = 0; i < form.quantity.value; i++) {
+        cart.push(item);
+    };
+    renderCartIcon();
+    localStorage.setItem("cart", JSON.stringify(cart));
+});
+
 // Item info
 document.querySelector(".game-description").addEventListener("click", () => {
     document.querySelector(".game-details").classList.remove("active-option");
@@ -75,15 +95,4 @@ document.querySelector(".game-details").addEventListener("click", () => {
     document.querySelector(".game-details").classList.add("active-option");
     document.querySelector(".game-description-text").classList.remove("active-text");
     document.querySelector(".game-details-text").classList.add("active-text");
-});
-
-// Cart
-const form = document.forms.quantity;
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    for (let i = 0; i < form.quantity.value; i++) {
-        cart.push(item);
-    };
-    renderCartIcon();
-    localStorage.setItem("cart", JSON.stringify(cart));
 });

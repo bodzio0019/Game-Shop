@@ -1,4 +1,4 @@
-export let data = [{
+export const data = [{
         page: "god-of-war",
         image: "godOfWar",
         name: "God of War",
