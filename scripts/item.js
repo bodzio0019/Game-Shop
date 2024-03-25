@@ -88,6 +88,7 @@ form.addEventListener("submit", (e) => {
         matchItem.quantity += +form.quantity.value;
     } else {
         cart.push(item);
+        item.quantity =+ +form.quantity.value;
     };
     renderCartIcon();
     localStorage.setItem("cart", JSON.stringify(cart));
