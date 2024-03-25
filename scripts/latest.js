@@ -21,8 +21,8 @@ document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
 // Aside
 document.querySelectorAll(".aside-category").forEach( (btn) => {
     btn.addEventListener("click", function() {
-        this.nextElementSibling.classList.toggle("aside-hide");
-        this.querySelector(".category-arrow").classList.toggle("category-arrow-turn");
+        btn.nextElementSibling.classList.toggle("aside-hide");
+        btn.querySelector(".category-arrow").classList.toggle("category-arrow-turn");
     });
 });
 
