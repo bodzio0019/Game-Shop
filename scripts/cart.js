@@ -4,6 +4,9 @@ import { cart, renderCartIcon } from "../data/cart.js";
 renderCartIcon();
 renderCart();
 renderSum();
+if (!cart.length) {
+    location.href = "cart-empty.html";
+};
 
 // Cart
 function renderCart() {
