@@ -32,7 +32,7 @@ document.querySelectorAll(".delete-item").forEach( (item) => {
         if(cart.length) {
             location.reload();
         } else {
-            location.replace("cart-empty.html");
+            location.href = "cart-empty.html";
         };
     });
 });
@@ -51,7 +51,7 @@ document.querySelectorAll(".refresh-item").forEach( (item) => {
 
 document.querySelector(".delete-all-js").addEventListener("click", () => {
     localStorage.clear();
-    location.replace("cart-empty.html");
+    location.href = "cart-empty.html";
 });
 
 function renderSum() {
