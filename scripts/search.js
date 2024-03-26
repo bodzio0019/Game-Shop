@@ -1,9 +1,9 @@
-import { data as data1 } from "../data/data.js";
+import { data } from "../data/data.js";
 import { cart, renderCartIcon } from "../data/cart.js";
 
 // On start
-const data = data1.sort((a, b) => b.sort - a.sort).slice(0, 7);
-renderItems(data);
+const search = JSON.parse(sessionStorage.getItem("search")) || [];
+renderItems(search);
 renderCartIcon();
 const form = document.forms.aside;
 let asideData = [];
@@ -14,12 +14,12 @@ document.querySelector(".search > i").addEventListener("click", () => {
     const valueInput = document.querySelector(".search > input").value
     const value = valueInput.toLowerCase().replace(/[^a-z0-9]/g, '');
     if(valueInput) {
-        const search = data1.filter( (item) => {
+        const search = data.filter( (item) => {
                 const name = item.name.toLowerCase().replace(/[^a-z0-9]/g, '');
                 return name.includes(value);
             });
         sessionStorage.setItem("search", JSON.stringify(search))
-        location.href = "search.html";
+        location.reload();
     };
 });
 document.querySelector(".search > input").addEventListener("keypress", (e) => {
@@ -54,17 +54,20 @@ document.querySelectorAll(".price-box").forEach( (i) => {
     });
 });
 
-document.querySelector(".reset").addEventListener("click", () => {
-    location.reload();
+document.querySelector(".reset").addEventListener("click", (e) => {
+    sessionStorage.clear();
+    location.href = "index.html";
 });
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let tempData = [];
     if (!form.action.checked && !form.rpg.checked && !form.fps.checked && (form.min.value == false) && (form.max.value == false)) {
-        location.reload();
+        sessionStorage.clear();
+        location.href = "index.html";
     } else {
         if (!form.action.checked && !form.rpg.checked && !form.fps.checked) {
-            tempData = data;
+            tempData = search;
             if (!(form.min.value == "") && !(form.max.value == "")) {
                 const min = form.min.value + "00";
                 const max = form.max.value + "00";
@@ -92,19 +95,19 @@ form.addEventListener("submit", (e) => {
             };
         } else {
             if (form.action.checked === true) {
-                const sortedArray = data.filter((item) => {
+                const sortedArray = search.filter((item) => {
                     return item.genre === "Action";
                 });
                 tempData.push(...sortedArray);
             };
             if (form.rpg.checked === true) {
-                const sortedArray = data.filter((item) => {
+                const sortedArray = search.filter((item) => {
                     return item.genre === "RPG";
                 });
                 tempData.push(...sortedArray);
             };
             if (form.fps.checked === true) {
-                const sortedArray = data.filter((item) => {
+                const sortedArray = search.filter((item) => {
                     return item.genre === "FPS";
                 });
                 tempData.push(...sortedArray);
@@ -146,7 +149,7 @@ form.addEventListener("submit", (e) => {
 select.addEventListener("change", () => {
     document.querySelector(".sort-disable").setAttribute("disabled", "");
     if (asideData == 0) {
-        asideSort(data);
+        asideSort(search);
     } else {
         asideSort(asideData);
     }

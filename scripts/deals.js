@@ -11,6 +11,25 @@ const form = document.forms.aside;
 let asideData = [];
 const select = document.querySelector("#sort");
 
+// Search
+document.querySelector(".search > i").addEventListener("click", () => {
+    const valueInput = document.querySelector(".search > input").value
+    const value = valueInput.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if(valueInput) {
+        const search = data1.filter( (item) => {
+                const name = item.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+                return name.includes(value);
+            });
+        sessionStorage.setItem("search", JSON.stringify(search))
+        location.href = "search.html";
+    };
+});
+document.querySelector(".search > input").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      document.querySelector(".search > i").click();
+    };
+});
+
 // Cart
 document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
     if(cart.length) {
@@ -25,6 +44,15 @@ document.querySelectorAll(".aside-category").forEach( (btn) => {
     btn.addEventListener("click", function() {
         btn.nextElementSibling.classList.toggle("aside-hide");
         btn.querySelector(".category-arrow").classList.toggle("category-arrow-turn");
+    });
+});
+
+document.querySelectorAll(".price-box").forEach( (i) => {
+    i.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            document.querySelector(".filter").click();
+        };
     });
 });
 
