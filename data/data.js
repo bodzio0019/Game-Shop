@@ -1,5 +1,6 @@
 export const data = [{
         page: "god-of-war",
+        id: 1,
         image: "godOfWar",
         name: "God of War",
         developer: "Sony Interactive Entertainment Europe",
@@ -19,6 +20,7 @@ export const data = [{
         quantity: 1
     },{
         page: "diablo-4",
+        id: 2,
         image: "diablo4",
         name: "Diablo IV - Standard Edition",
         developer: "Blizzard entertaiment, Inc.",
@@ -40,6 +42,7 @@ export const data = [{
         quantity: 1
     },{
         page: "battlefield-2042",
+        id: 3,
         image: "battlefield2042",
         name: "Battlefield 2042",
         developer: "EA Swiss Sarl",
@@ -57,6 +60,7 @@ export const data = [{
         quantity: 1
     },{
         page: "uncharted-collection",
+        id: 4,
         image: "unchartedCollection",
         name: "Uncharted: The Nathan Drake Collection",
         developer: "Sony Interactive Entertainment Europe",
@@ -74,10 +78,11 @@ export const data = [{
         quantity: 1
     },{
         page: "demons-souls",
+        id: 5,
         image: "demonsSouls",
         name: "Demon's Souls",
         developer: "Sony Interactive Entertainment Europe",
-        status: 1,
+        status: 0,
         price: 33900,
         discount: 0,
         description: `<p>From PlayStation Studios and Bluepoint Games comes a remake of the PlayStation classic, Demon's Souls. Entirely rebuilt from the ground up and masterfully enhanced, this remake introduces the horrors of a fog-laden, dark fantasy land to a whole new generation of gamers. Those who've faced its trials and tribulations before can once again challenge the darkness in stunning visual quality and incredible performance.</p><br />
@@ -90,6 +95,7 @@ export const data = [{
         quantity: 1
     },{
         page: "returnal",
+        id: 6,
         image: "returnal",
         name: "Returnal",
         developer: "Sony Interactive Entertainment Europe",
@@ -115,6 +121,7 @@ export const data = [{
         quantity: 1
     },{
         page: "marvels-spider-man",
+        id: 7,
         image: "marvelsSpiderMan",
         name: "Marvel’s Spider-Man: Game of the Year Edition",
         developer: "Sony Interactive Entertainment Europe",
@@ -133,6 +140,7 @@ export const data = [{
         quantity: 1
     },{
         page: "assassins-creed-origins",
+        id: 8,
         image: "assassinsCreedOrigins",
         name: "Assassin's Creed Origins",
         developer: "UBISOFT ENTERTAINMENT SA",
@@ -151,6 +159,7 @@ export const data = [{
         quantity: 1
     },{
         page: "call-of-duty-modern-warfare",
+        id: 9,
         image: "callOfDutyModerWarfare",
         name: "Call of Duty: Modern Warfare",
         developer: "Activision Blizzard Int'l BV",
@@ -171,10 +180,11 @@ export const data = [{
         quantity: 1
     },{
         page: "ratchet-clank-rift-apart",
+        id: 10,
         image: "ratchetClankRiftApart",
         name: "Ratchet & Clank: Rift Apart",
         developer: "Sony Interactive Entertainment",
-        status: 1,
+        status: 0,
         price: 33900,
         discount: 0,
         description: `<p>Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality. Jump between action-packed worlds, and beyond at mind-blowing speeds – complete with dazzling visuals and an insane arsenal – as the intergalactic adventurers blast onto the PS5 console.</p>`,
@@ -185,6 +195,7 @@ export const data = [{
         quantity: 1
     },{
         page: "elden-ring",
+        id: 11,
         image: "eldenRing",
         name: "Elden Ring",
         developer: "BANDAI NAMCO Entertainment Inc.",
@@ -204,10 +215,11 @@ export const data = [{
         quantity: 1
     },{
         page: "cyberpunk-2077",
+        id: 12,
         image: "cyberpunk2077",
         name: "Cyberpunk 2077",
         developer: "CD Projekt",
-        status: 1,
+        status: 0,
         price: 20900,
         discount: 0,
         description: `<p>Cyberpunk 2077 is an open-world action-adventure from the creators of The Witcher 3: Wild Hunt, CD Projekt Red.</p><br />
@@ -221,6 +233,7 @@ export const data = [{
         quantity: 1
     },{
         page: "grand-theft-auto-V",
+        id: 13,
         image: "grandTheftAutoV",
         name: "Grand Theft Auto V",
         developer: "Rockstar Games",
@@ -235,6 +248,7 @@ export const data = [{
         quantity: 1
     },{
         page: "the-witcher-3-wild-hunt",
+        id: 14,
         image: "theWitcher3WildHunt",
         name: "The Witcher 3: Wild Hunt",
         developer: "CD Projekt",

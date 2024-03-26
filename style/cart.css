@@ -71,14 +71,38 @@
 }
 .details-quantity {
     width: 15%;
+    position: relative;
 }
 .details-quantity > input {
     width: 70px;
     height: 30px;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+.details-quantity > i {
+    padding: 0;
+    font-size: 1.4rem;
+    position: absolute;
+    right: 20px;
+    top: 4px;
+}
+.details-quantity > i:hover {
+    cursor: pointer;
 }
 .details-delete {
     width: 15%;
-    font-size: 1.6rem;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.details-delete i {
+    padding: 0;
+    font-size: 1.5rem;
 }
 .details-delete > i:hover {
     cursor: pointer;
