@@ -156,11 +156,11 @@ footer {
     font-size: 2rem;
     display: flex;
     justify-content: center;
-    padding-top: 1em;
+    padding-top: 0.5em;
 }
 .search {
     order: 2;
-    padding: 1em 1em;
+    padding: 1em 1em 0.5em 1em;
     width: 100%;
 }
 .search > input {
@@ -181,7 +181,7 @@ footer {
 .cart {
     order: 3;
     width: 100%;
-    padding: 0 2em 1em 2em;
+    padding: 0 2em 0.5em 2em;
     justify-content: space-between;
     
 }
