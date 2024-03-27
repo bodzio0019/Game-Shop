@@ -71,6 +71,7 @@ main {
 .add-to-cart {
     width: 180px;
     padding: 0.5em;
+    color: inherit;
     background-color: rgb(234, 234, 234);
     border: 1px solid rgb(180, 180, 180);
     transition: all 0.15s ease;
@@ -136,4 +137,72 @@ main {
 }
 .active-text {
     display: block;
+}
+
+/* --- @MEDIA --- */
+
+@media screen and (max-width: 480px){
+
+/* --- MAIN --- */
+
+.container-1 {
+    width: 100%;
+    margin: 0;
+    padding: 1em 0 0 0;
+}
+
+/* --- ARTICLE --- */
+
+/* Item header */
+.item-main-header {
+    display: flex;
+    flex-direction: column;
+}
+.item-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.item-image > img {
+    max-width: 70%;
+}
+.item-cart {
+    width: 100%;
+    padding: 1em;
+}
+.cart-wrapper {
+    padding-bottom: 2em;
+}
+.add-quantity {
+    width: 20%;
+    height: 50px;
+}
+.add-to-cart {
+    width: 70%;
+    height: 50px;
+}
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Item info */
+.item-main-info {
+    width: 100%;
+}
+.game-description {
+    width: 50%;
+    text-align: center;
+}
+.game-details {
+    width: 50%;
+    text-align: center;
+}
+.game-description-text {
+    padding: 0 1em 1em 1em;
+}
+.game-details-text {
+    padding: 0 1em 1em 1em;
+}
 }
