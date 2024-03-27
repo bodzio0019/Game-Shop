@@ -18,3 +18,9 @@ document.querySelector(".search > input").addEventListener("keypress", (e) => {
       document.querySelector(".search > i").click();
     };
 });
+
+// Mobile-Nav
+document.querySelector(".navbar-icon").addEventListener("click", () => {
+    document.querySelector("nav").classList.toggle("nav-hide");
+    document.querySelector(".navbar-icon").classList.toggle("nav-icon-rotate");
+});

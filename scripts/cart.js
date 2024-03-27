@@ -91,3 +91,9 @@ function renderSum() {
     };
     document.querySelector(".last-cost").innerHTML = `${(sum/100).toFixed(2)} zł`;
 };
+
+// Mobile-Nav
+document.querySelector(".navbar-icon").addEventListener("click", () => {
+    document.querySelector("nav").classList.toggle("nav-hide");
+    document.querySelector(".navbar-icon").classList.toggle("nav-icon-rotate");
+});

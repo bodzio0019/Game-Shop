@@ -34,6 +34,12 @@ document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
     };
 });
 
+// Mobile-Nav
+document.querySelector(".navbar-icon").addEventListener("click", () => {
+    document.querySelector("nav").classList.toggle("nav-hide");
+    document.querySelector(".navbar-icon").classList.toggle("nav-icon-rotate");
+});
+
 // Item render
 function renderItem() {
     const result = data.filter(obj => {

@@ -30,6 +30,7 @@
                     </div>
                 </a>
                 <div class="cart">
+                    <div class="navbar-icon"><i class="fa-solid fa-bars" style="color: #800000;"></i></div>
                     <div class="cart-price-wrapper"><p class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></p><p class="cart-sum">(0)</p><p class="cart-price">0.00 zł</p></div>
                 </div>
             </section>
@@ -57,26 +58,31 @@
                 <!-- Aside -->
                 <aside>
                     <form name="aside" action="" method="get">
-                        <div class="aside-category">
-                            <p>Genre</p><p class="category-arrow category-arrow-turn">&lt;</p>
-                        </div>
-                        <div class="option-group">
-                            <div class="aside-option">
-                                <input type="checkbox" name ="action" class="checkbox" /><p>Action</p>
+                        <div>
+                            <div class="exit-aside">
+                                <p>&lt;</p>
                             </div>
-                            <div class="aside-option">
-                                <input type="checkbox" name="rpg" class="checkbox" /><p>RPG</p>
+                            <div class="aside-category">
+                                <p>Genre</p><p class="category-arrow category-arrow-turn">&lt;</p>
                             </div>
-                            <div class="aside-option">
-                                <input type="checkbox" name="fps" class="checkbox" /><p>FPS</p>
+                            <div class="option-group">
+                                <div class="aside-option">
+                                    <input type="checkbox" name ="action" class="checkbox" /><p>Action</p>
+                                </div>
+                                <div class="aside-option">
+                                    <input type="checkbox" name="rpg" class="checkbox" /><p>RPG</p>
+                                </div>
+                                <div class="aside-option">
+                                    <input type="checkbox" name="fps" class="checkbox" /><p>FPS</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="aside-category">
-                            <p>Price</p><p class="category-arrow category-arrow-turn">&lt;</p>
-                        </div>
-                        <div class="option-group option-group-2">
-                            <div class="aside-option aside-option-2">
-                                <input type="text" name="min" class="price-box" placeholder="min" min="0"/><p>-</p><input type="text" name="max" class="price-box" placeholder="max"/><p></p>
+                            <div class="aside-category">
+                                <p>Price</p><p class="category-arrow category-arrow-turn">&lt;</p>
+                            </div>
+                            <div class="option-group option-group-2">
+                                <div class="aside-option aside-option-2">
+                                    <input type="text" name="min" class="price-box" placeholder="min" min="0"/><p>-</p><input type="text" name="max" class="price-box" placeholder="max"/>
+                                </div>
                             </div>
                         </div>
                         <div class="aside-btn">
@@ -92,6 +98,9 @@
                 <!-- Article -->
                 <article>
                     <!-- Sort and pages -->
+                    <section class="mobile-aside">
+                        <p>Filters</p>
+                    </section>
                     <section class="pages">
                         <div class="list-sort">
                             <p><span style="font-size: 1.5rem;">&udhar;</span><span style="font-weight: bold;"> Sort:</span></p>

@@ -19,6 +19,9 @@ aside {
     -ms-user-select: none;
     user-select: none;
 }
+.exit-aside {
+    display: none;
+}
 .aside-category {
     display: flex;
     justify-content: space-between;
@@ -125,12 +128,14 @@ aside {
 /* --- ARTICLE --- */
 
 article {
-    min-height: 500px;
     height: 100%;
     width: 80%;
 }
 
 /* Sort and pages */
+.mobile-aside {
+    display: none;
+}
 .pages {
     width: 100%;
     padding: 1em 4em;
@@ -220,4 +225,117 @@ article {
 .game-price {
     font-size: 0.9rem;
     padding-bottom: 0.7em;
+}
+
+/* --- @MEDIA --- */
+
+@media screen and (max-width: 480px){
+
+/* --- @MAIN --- */
+
+.container-1 {
+    min-height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- @ASIDE --- */
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 0;
+    z-index: 100;
+    transform: translate(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.aside-show {
+    transform: translate(0%);
+}
+.fixed {
+    position: fixed;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.exit-aside {
+    display: block;
+}
+.exit-aside > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 60px;
+    width: 60px;
+    background-color: rgb(198, 197, 197);
+}
+.aside-category:hover {
+    background-color: inherit;
+}
+.aside-option-2 {
+    padding: 0 4em;
+}
+.aside-btn {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+    
+/* --- @ARTICLE --- */
+
+article {
+    height: 100%;
+    width: 100%;
+}
+
+/* @Sort and pages */
+.mobile-aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C0C0C0;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin-top: -1px;
+}
+.mobile-aside > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+    height: 40px;
+}
+.mobile-aside:hover {
+    background-color: #aeadad;
+}
+.pages {
+    padding: 1em;
+}
+.list-sort {
+    width: 50%;
+    font-size: 0.8rem;
+}
+.list-pages {
+    width: 50%;
+}
+/* @Items */
+.items a {
+    width: 50%;
+}
+.game-item {
+    transition: none;
+}
+.game-item:hover {
+    transform: none;
+}
 }

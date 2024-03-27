@@ -36,6 +36,12 @@ document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
     };
 });
 
+// Mobile-Nav
+document.querySelector(".navbar-icon").addEventListener("click", () => {
+    document.querySelector("nav").classList.toggle("nav-hide");
+    document.querySelector(".navbar-icon").classList.toggle("nav-icon-rotate");
+});
+
 // Aside
 document.querySelectorAll(".aside-category").forEach( (btn) => {
     btn.addEventListener("click", function() {
@@ -138,7 +144,22 @@ form.addEventListener("submit", (e) => {
         document.querySelector(".sort-disable").selected = true;
         asideData = tempData;
         renderItems(tempData);
+        document.querySelector(".exit-aside > p").click();
     };
+});
+
+// Mobile-Aside
+document.querySelector(".exit-aside > p").addEventListener("click", () => {
+    document.querySelector("aside").classList.toggle("aside-show");
+    document.querySelector("body").style.position = "static";
+});
+
+// Mobile-Filter
+document.querySelector(".mobile-aside").addEventListener("click", () => {
+    document.querySelector("aside").classList.toggle("aside-show");
+    setTimeout( () => {
+        document.querySelector("body").style.position = "fixed";
+    }, "300");
 });
 
 // Sort

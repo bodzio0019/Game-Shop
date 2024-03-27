@@ -14,7 +14,7 @@ img {
 }
 body {
     background-color: #fff;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 a {
     text-decoration: none;
@@ -78,6 +78,9 @@ input:focus {
     width: 20%;
     padding: 1.5em 5em 1.5em 0;
 }
+.navbar-icon {
+    display: none;
+}
 .cart-price-wrapper {
     height: 30px;
     display: flex;
@@ -135,4 +138,94 @@ footer {
     background-color: #454545;
     color: rgb(176, 176, 176);
     border-top: 1px solid grey;
+}
+
+/* --- @MEDIA --- */
+
+/* --- @HEADER --- */
+@media screen and (max-width: 480px){
+.top {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+.top > a {
+    order: 1;
+}
+.title {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+}
+.search {
+    order: 2;
+    padding: 1em 1em;
+    width: 100%;
+}
+.search > input {
+    width: 90%;
+    height: 50px;
+    border-radius: 0;
+    border-top: 1px solid rgb(88, 88, 88);
+}
+.search > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    height: 50px;
+    padding: 0 0.5em;
+    border-top: 1px solid rgb(88, 88, 88);
+}
+.cart {
+    order: 3;
+    width: 100%;
+    padding: 0 2em 1em 2em;
+    justify-content: space-between;
+    
+}
+.navbar-icon {
+    display: block;
+    font-size: 1.7rem;
+    transition: transform 0.4s ease-in-out;
+}
+.nav-icon-rotate {
+    transform: rotate(90deg);
+}
+.cart-price-wrapper {
+    font-size: 1rem;
+}
+
+/* --- @NAV--- */
+
+nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+}
+nav > div {
+    width: 100%;
+}
+nav p {
+    transition: none;
+    font-size: 1.3rem;
+    border-radius: 0px;
+}
+nav p:hover {
+    font-size: 1.3rem;
+}
+.nav-hide {
+    height: 230px;
+}
+
+/* --- @FOOTER--- */
+ footer {
+    height: 50px;
+    font-size: 0.8rem;
+ }
 }
