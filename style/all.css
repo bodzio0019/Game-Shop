@@ -7,6 +7,10 @@
     margin: 0 auto;
     padding-bottom: 2px;
 }
+label {
+    display: flex;
+    align-items: center;
+}
 
 /* --- ASIDE --- */
 
@@ -43,7 +47,7 @@ aside {
 .option-group {
     height: 120px;
     overflow: hidden;
-    transition: height 0.4s ease-in-out;
+    transition: height 0.3s ease-in-out;
 }
 .option-group-2 {
     height: 60px;
@@ -270,10 +274,10 @@ form {
     height: 100%;
 }
 .exit-aside {
-    display: block;
+    display: flex;
     border-bottom: 1px solid grey;
 }
-.exit-aside > p {
+.arrow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -282,11 +286,28 @@ form {
     width: 60px;
     background-color: rgb(198, 197, 197);
 }
+.arrow-back {
+    width: 100%;
+    padding-left: 1em;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.aside-category {
+    font-size: 1.5rem;
+}
 .aside-category:hover {
     background-color: inherit;
 }
+.checkbox {
+    transform: scale(1.6);
+}
 .aside-option-2 {
     padding: 0 4em;
+}
+.price-box {
+    height: 55px;
+    width: 85px;
 }
 .aside-btn {
     border-top: none;
