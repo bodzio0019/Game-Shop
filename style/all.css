@@ -237,7 +237,7 @@ article {
 /* --- @MAIN --- */
 
 .container-1 {
-    min-height: 400px;
+    min-height: 500px;
     margin: 0;
     padding: 0;
 }
@@ -271,6 +271,7 @@ form {
 }
 .exit-aside {
     display: block;
+    border-bottom: 1px solid grey;
 }
 .exit-aside > p {
     display: flex;

@@ -39,7 +39,12 @@ function renderCart() {
         <p class="details-price flex-justify-center">${(((item.discount || item.price)/100) * item.quantity).toFixed(2)} zł</p>
         <p class="details-quantity details-quantity-${item.id} flex-justify-center"><input type="number" value="${item.quantity}" min="1" max="100"/><i class="fa-solid fa-rotate refresh-item" style="color: #0042aa;" data-id="${item.id}"></i></p>
         <p class="details-delete flex-justify-center"><i class="fa-solid fa-circle-xmark delete-item" style="color: #b51a00;" data-id="${item.id}"></i></p>
-        </div>`;
+        <p class="item-modal-mobile"><i class="fa-solid fa-ellipsis-vertical" style="color: #000000;" data-id="${item.id}"></i></p>
+        </div>
+        <div class="item-modal-wrapper wrapper-js-${item.id}">
+        <p class="refresh-modal">Quantity:</p><p class="delete-modal">Delete:</p>
+        <p class="details-quantity details-quantity-${item.id} details-quantity-js-${item.id} flex-justify-center details-quantity-modal"><input type="number" value="${item.quantity}" min="1" max="100"/><i class="fa-solid fa-rotate refresh-item refresh-item-js" style="color: #0042aa;" data-id="${item.id}"></i></p>
+        <p class="details-delete flex-justify-center details-delete-modal"><i class="fa-solid fa-circle-xmark delete-item" style="color: #b51a00;" data-id="${item.id}"></i></p></div>`;
     });
     document.querySelector(".items-wrapper").innerHTML = html;
 };
@@ -96,4 +101,22 @@ function renderSum() {
 document.querySelector(".navbar-icon").addEventListener("click", () => {
     document.querySelector("nav").classList.toggle("nav-hide");
     document.querySelector(".navbar-icon").classList.toggle("nav-icon-rotate");
+});
+
+document.querySelectorAll(".refresh-item-js").forEach( (item) => {
+    item.addEventListener("click", () => {
+        let product = cart.find( (i) => {
+            return i.id == item.dataset.id;
+        });
+        const index = cart.indexOf(product);
+        cart[index].quantity = +document.querySelector(`.details-quantity-js-${cart[index].id} > input`).value;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        location.reload();
+    });
+});
+
+document.querySelectorAll(".item-modal-mobile > i").forEach( (item) => {
+    item.addEventListener("click", () => {
+        document.querySelector(`.wrapper-js-${item.dataset.id}`).classList.toggle("item-modal-wrapper-show");
+    });
 });

@@ -3,7 +3,7 @@
 .container-1 {
     width: 100%;
     max-width: 1200px;
-    min-height: 700px;
+    min-height: 650px;
     margin: 0 auto;
     padding: 2em 0;
     display: flex;
@@ -12,6 +12,7 @@
 }
 
 /* --- ARTICLE --- */
+
 .container-1 > h2 {
     padding: 1em 0 2em 0;
 }
@@ -71,7 +72,6 @@
 }
 .details-quantity {
     width: 15%;
-    position: relative;
 }
 .details-quantity > input {
     width: 70px;
@@ -83,11 +83,11 @@
     text-align: center;
 }
 .details-quantity > i {
-    padding: 0;
     font-size: 1.4rem;
-    position: absolute;
-    right: 20px;
-    top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.5em;
 }
 .details-quantity > i:hover {
     cursor: pointer;
@@ -107,6 +107,9 @@
 .details-delete > i:hover {
     cursor: pointer;
 }
+.item-modal-mobile {
+    display: none;
+}
 .delete-all {
     padding: 1em 0 1em 2em;
     font-size: 0.95rem;
@@ -125,6 +128,9 @@
 .flex-justify-center {
     display: flex;
     justify-content: center;
+}
+.item-modal-wrapper {
+    display: none;
 }
 
 /* Cart summary */
@@ -178,6 +184,8 @@
     width: 100%;
     padding: 1em;
     border-top: 1px solid rgb(88, 88, 88);
+    background-color: rgb(245, 245, 245);
+
 }
 .cart-buttons > a > p {
     display: inline-block;
@@ -188,13 +196,148 @@
 .continue {
     width: 250px;
     padding: 1em 0.5em;
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(216, 216, 216);
     border: 1px solid rgb(180, 180, 180);
     transition: all 0.15s ease;
+    color: inherit;
     border-radius: 5px;
     font-size: 1rem;
 }
 .continue:hover {
     cursor: pointer;
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(198, 198, 198);
+}
+
+/* --- @MEDIA --- */
+
+/* --- @MAIN --- */
+@media screen and (max-width: 480px) {
+
+.container-1 {
+    min-height: 550px;
+    margin: 0;
+    padding: 0 1em 2em 1em;
+}
+
+/* --- @ARTICLE --- */
+
+.container-1 > h2 {
+    padding: 1em;
+}
+.item-label {
+    display: none;
+}
+.items-wrapper {
+    border-top: 1px solid rgb(88, 88, 88);
+}
+.item-details {
+    justify-content: space-between;
+    height: 100px;
+}
+.details-img {
+    width: 15%;
+}
+.details-img > img {
+    width: 100%;
+    padding: 1em 0;
+}
+.details-price-unit{
+    display: none;
+}
+.details-price {
+    width: 30%;
+}
+.details-quantity {
+    display: none;
+}
+.details-delete {
+    display: none;
+}
+.item-modal-mobile {
+    display: block;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-modal-mobile > i {
+    padding: 0.5em;
+    font-size: 1.5rem;
+}
+.delete-all {
+    padding: 1em 0 1em 1em;
+}
+
+/* @Item Modal */
+.item-modal-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    padding: 0.5em;
+    border-top: 1px solid rgb(186, 186, 186);
+    -webkit-box-shadow: 0px -3px 25px -6px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px -3px 25px -6px rgba(66, 68, 90, 1);
+    box-shadow: 0px -3px 25px -6px rgba(66, 68, 90, 1);
+    transform: translateY(130%);
+    transition: transform 0.25s ease-in-out;
+    z-index: 100;
+}
+.item-modal-wrapper-show {
+    transform: translateY(0%);
+}
+.refresh-modal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delete-modal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.details-quantity-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.details-delete-modal {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* @Cart summary */
+.cart-summary {
+    align-items: flex-start;
+}
+.price-wrapper {
+    width: 100%;
+}
+.price-wrapper-top {
+    grid-template-columns: 1fr 2fr;
+}
+.price-wrapper-bottom {
+    grid-template-columns: 1fr 2fr;
+}
+.cart-buttons > a > p {
+    display: inline-block;
+    font-size: 1rem;
+    width: 40%;
+    text-align: left;
+}
+.continue {
+    width: 40%;
+    text-align: center;
+    font-size: 1rem;
+}
 }

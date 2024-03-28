@@ -25,10 +25,28 @@
     background-color: rgb(234, 234, 234);
     border: 1px solid rgb(180, 180, 180);
     transition: all 0.15s ease;
+    color: inherit;
     border-radius: 5px;
     font-size: 1.2rem;
 }
 .start:hover {
     cursor: pointer;
     background-color: rgb(220, 220, 220);
+}
+
+/* --- @MEDIA --- */
+
+/* --- @MAIN --- */
+@media screen and (max-width: 480px){
+.container-1 {
+    padding: 0 3em;
+    min-height: 500px;
+}
+.container-1 > i {
+    padding: 1em 0 0.5em 0;
+}
+.cart-text {
+    text-align: center;
+    padding-bottom: 1em;
+}
 }
