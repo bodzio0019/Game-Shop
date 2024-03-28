@@ -324,20 +324,22 @@
     width: 100%;
 }
 .price-wrapper-top {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2.6fr;
+    font-size: 0.9rem;
 }
 .price-wrapper-bottom {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2.6fr;
+    font-size: 1.4rem;
 }
 .cart-buttons > a > p {
     display: inline-block;
-    font-size: 1rem;
+    font-size: 0.9rem;
     width: 40%;
     text-align: left;
 }
 .continue {
     width: 40%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 }
