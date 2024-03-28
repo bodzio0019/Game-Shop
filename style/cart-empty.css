@@ -40,13 +40,22 @@
 @media screen and (max-width: 480px){
 .container-1 {
     padding: 0 3em;
-    min-height: 500px;
+    min-height: 510px;
 }
 .container-1 > i {
     padding: 1em 0 0.5em 0;
+    font-size: 4rem;
+}
+.cart-header {
+    font-size: 1.3rem;
 }
 .cart-text {
     text-align: center;
     padding-bottom: 1em;
+    font-size: 0.9rem;
+}
+.start {
+    width: 180px;
+    font-size: 1rem;
 }
 }
