@@ -64,7 +64,12 @@ function renderItem() {
     <p class="small-info"><i class="fa-solid fa-star" style="color: #000000;"></i></i>We are an authorized seller and guarantee the originality of the products offered.</p>
     <p class="small-info"><i class="fa-solid fa-rotate-left" style="color: #000000;"></i>Return is possible within 14 days from the date of receipt of the goods.</p>
     </div>`;
-    const htmlInfo = ` <div class="item-info-wrapper">
+    const htmlInfo = `<div class="modal-cart">
+    <div class="modal-top"><p>Added to cart</p></div>
+    <div class="modal-bottom"><div class="modal-img"><img src="../img/${item.image}.jpg" alt="Game picture" /></div><div class="modal-info"><p class="modal-name">${item.name}</p><p class="modal-price">${((item.discount || item.price)/100).toFixed(2)} zł</p><div class="modal-buttons"><div class="modal-back">&lt;&nbsp;Continue</div><button>Go to cart</button></div></div></div>
+    </div>
+    <div class="overlay"></div>
+    <div class="item-info-wrapper">
     <h2 class="game-description active-option">Description</h2>
     <h2 class="game-details">Details</h2>
     </div>
@@ -117,6 +122,9 @@ form.addEventListener("submit", (e) => {
     };
     renderCartIcon();
     localStorage.setItem("cart", JSON.stringify(cart));
+    window.scrollTo(0, 0);
+    document.querySelector(".modal-cart").classList.toggle("modal-show");
+    document.querySelector(".overlay").classList.toggle("overlay-show");
 });
 
 // Item info
@@ -131,4 +139,14 @@ document.querySelector(".game-details").addEventListener("click", () => {
     document.querySelector(".game-details").classList.add("active-option");
     document.querySelector(".game-description-text").classList.remove("active-text");
     document.querySelector(".game-details-text").classList.add("active-text");
+});
+
+// Modal
+document.querySelector(".modal-back").addEventListener("click", () => {
+    document.querySelector(".modal-cart").classList.toggle("modal-show");
+    document.querySelector(".overlay").classList.toggle("overlay-show");
+});
+
+document.querySelector(".modal-buttons > button").addEventListener("click", () => {
+    location.href = "../cart.html";
 });
