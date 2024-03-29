@@ -179,6 +179,37 @@ export const data = [{
         genre: "FPS",
         quantity: 1
     },{
+        page: "grand-theft-auto-V",
+        id: 13,
+        image: "grandTheftAutoV",
+        name: "Grand Theft Auto V",
+        developer: "Rockstar Games",
+        status: 1,
+        price: 16900,
+        discount: 0,
+        description: `<p>Experience blockbuster hits Grand Theft Auto V and GTA Online - now upgraded for PlayStation 5 with stunning visuals, faster loading, adaptive triggers, haptic feedback, Tempest 3D audio and more, plus exclusive content for GTA Online players.</p><br />`,
+        platform: ["PS4"],
+        release: "18/11/2014",
+        sort: 20141118,
+        genre: "Action",
+        quantity: 1
+    },{
+        page: "the-witcher-3-wild-hunt",
+        id: 14,
+        image: "theWitcher3WildHunt",
+        name: "The Witcher 3: Wild Hunt",
+        developer: "CD Projekt",
+        status: 1,
+        price: 12900,
+        discount: 0,
+        description: `<p>You are Geralt, from the city of Rivia. All around you the towns and settlements of the Northern Kingdoms are being razed to the ground, as an otherworldly invading army known only as the Wild Hunt leaves a trail of blood-soaked destruction in its wake.</p><br />
+        <p>As you prepare for a thunderous confrontation with the Wild Hunt, you’ll uncover a complex, gripping story and meet unforgettable characters. While exploring the Northern Kingdoms, you’ll discover that mysteries lurk inside every village, tree, and shadow.</p><br />`,
+        platform: ["PS4","PS5"],
+        release: "14/12/2022",
+        sort: 20221214,
+        genre: "RPG",
+        quantity: 1
+    },{
         page: "ratchet-clank-rift-apart",
         id: 10,
         image: "ratchetClankRiftApart",
@@ -230,36 +261,5 @@ export const data = [{
         release: "15/2/2022",
         sort: 20220215,
         genre: "FPS",
-        quantity: 1
-    },{
-        page: "grand-theft-auto-V",
-        id: 13,
-        image: "grandTheftAutoV",
-        name: "Grand Theft Auto V",
-        developer: "Rockstar Games",
-        status: 1,
-        price: 16900,
-        discount: 0,
-        description: `<p>Experience blockbuster hits Grand Theft Auto V and GTA Online - now upgraded for PlayStation 5 with stunning visuals, faster loading, adaptive triggers, haptic feedback, Tempest 3D audio and more, plus exclusive content for GTA Online players.</p><br />`,
-        platform: ["PS4"],
-        release: "18/11/2014",
-        sort: 20141118,
-        genre: "Action",
-        quantity: 1
-    },{
-        page: "the-witcher-3-wild-hunt",
-        id: 14,
-        image: "theWitcher3WildHunt",
-        name: "The Witcher 3: Wild Hunt",
-        developer: "CD Projekt",
-        status: 1,
-        price: 12900,
-        discount: 0,
-        description: `<p>You are Geralt, from the city of Rivia. All around you the towns and settlements of the Northern Kingdoms are being razed to the ground, as an otherworldly invading army known only as the Wild Hunt leaves a trail of blood-soaked destruction in its wake.</p><br />
-        <p>As you prepare for a thunderous confrontation with the Wild Hunt, you’ll uncover a complex, gripping story and meet unforgettable characters. While exploring the Northern Kingdoms, you’ll discover that mysteries lurk inside every village, tree, and shadow.</p><br />`,
-        platform: ["PS4","PS5"],
-        release: "14/12/2022",
-        sort: 20221214,
-        genre: "RPG",
         quantity: 1
     }];
