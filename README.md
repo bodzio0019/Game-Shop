@@ -1,2 +1,3 @@
 # Game-Shop
-Game Shop project
+Thanks, for this repository
+you are so cool
