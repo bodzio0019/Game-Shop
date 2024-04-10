@@ -1,101 +1,122 @@
 <!DOCTYPE html>
-<html lang="pl">
-    <!-- HEAD -->
-    <head>
-        <meta charset="utf-8" />
-        <title>Game Shop</title>
-        <meta name="author" content="Nikolas Niemierowski" />
-        <meta name="theme-color" content="#454545" />
-        <meta name="description" content="Game Shop Project" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-        <meta name="keywords" content="Game Shop, Project, Programming" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
-        <script src="https://kit.fontawesome.com/2e6efd609f.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style/main.css" />
-        <link rel="stylesheet" href="style/cart.css" />
-    </head>
-    <!-- BODY -->
-    <body>
-        <!-- Header -->
-        <header>
-            <section class="top">
-                <div class="search">
-                    <input type="text" spellcheck="false" placeholder="Search for a game..."/>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <a href="index.html">
-                    <div class="title">
-                        <h1><i class="fa-solid fa-gamepad" style="color: #454545;"></i><span style="color: rgb(69, 69, 69);">GAME </span><span style="color: rgb(128, 0, 0);">$HOP</span></h1>
-                    </div>
-                </a>
-                <div class="cart">
-                    <div class="navbar-icon"><i class="fa-solid fa-bars" style="color: #800000;"></i></div>
-                    <div class="cart-price-wrapper"><p class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></p><p class="cart-sum">(0)</p><p class="cart-price">0.00 zł</p></div>
-                </div>
-            </section>
-            <!-- Nav -->
-            <nav>
-                <div>
-                    <a href="index.html"><p>All</p></a>
-                </div>
-                <div>
-                    <a href="latest.html"><p>Latest</p></a>
-                </div>
-                <div>
-                    <a href="deals.html"><p>Deals</p></a>
-                </div>
-                <div>
-                    <a href="ps4.html"><p>PS4</p></a>
-                </div>
-                <div>
-                    <a href="ps5.html"><p>PS5</p></a>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <!-- Article -->
-            <article class="container-1">
-                <h2>Your cart</h2>
-                <!-- Cart items -->
-                <section class="cart-items">
-                    <div class="item-label">
-                        <p class="label-price-unit flex-justify-center">Price (unit)</p>
-                        <p class="label-price flex-justify-center">Price</p>
-                        <p class="label-quantity flex-justify-center">Quantity</p>
-                        <p class="label-delete flex-justify-center">Delete</p>
-                    </div>
-                    <div class="items-wrapper">
-                    </div>
-                    <div class="delete-all">
-                        <p class="delete-all-js"><i class="fa-solid fa-trash"></i>Delete all</p>
-                    </div>
-                </section>
-                <!-- Cart summary -->
-                <section class="cart-summary">
-                    <div class="price-wrapper">
-                        <div class="price-wrapper-top">
-                            <p>Order value:</p>
-                            <p class="item-price">249.99 zł</p>
-                            <p>Shipping:</p>
-                            <p class="item-shipping">Free!</p>
-                        </div>
-                        <div class="price-wrapper-bottom">
-                            <p class="to-pay">Total:</p>
-                            <p class="last-cost">249.99 zł</p>
-                        </div>
-                    </div>
-                    <div class="cart-buttons">
-                        <a href="index.html"><p>&lt;&nbsp;&nbsp;Continue shopping</p></a>
-                        <button class="continue">Continue to checkout</button>
-                    </div>
-                </section>
-            </article>
-        </main>
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 All rights reserved</p>
-        </footer>
-        <script src="scripts/cart.js" type="module"></script>
-    </body>
+<html lang="en">
+  <!-- HEAD -->
+  <head>
+    <meta charset="utf-8" />
+    <title>Game Shop</title>
+    <meta name="author" content="Nikolas Niemierowski" />
+    <meta name="theme-color" content="#454545" />
+    <meta name="description" content="Game Shop Project" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name="keywords" content="Game Shop, Project, Programming" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <script
+      src="https://kit.fontawesome.com/2e6efd609f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/cart.css" />
+  </head>
+  <!-- BODY -->
+  <body>
+    <!-- Header -->
+    <header>
+      <section class="top">
+        <div class="search">
+          <input
+            type="text"
+            spellcheck="false"
+            placeholder="Search for a game..."
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <a href="index.html">
+          <div class="title">
+            <h1>
+              <i class="fa-solid fa-gamepad" style="color: #454545"></i
+              ><span style="color: rgb(69, 69, 69)">GAME </span
+              ><span style="color: rgb(128, 0, 0)">$HOP</span>
+            </h1>
+          </div>
+        </a>
+        <div class="cart">
+          <div class="navbar-icon">
+            <i class="fa-solid fa-bars" style="color: #800000"></i>
+          </div>
+          <div class="cart-price-wrapper">
+            <p class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></p>
+            <p class="cart-sum">(0)</p>
+            <p class="cart-price">0.00 zł</p>
+          </div>
+        </div>
+      </section>
+      <!-- Nav -->
+      <nav>
+        <div>
+          <a href="index.html"><p>All</p></a>
+        </div>
+        <div>
+          <a href="latest.html"><p>Latest</p></a>
+        </div>
+        <div>
+          <a href="deals.html"><p>Deals</p></a>
+        </div>
+        <div>
+          <a href="ps4.html"><p>PS4</p></a>
+        </div>
+        <div>
+          <a href="ps5.html"><p>PS5</p></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Article -->
+      <article class="container-1">
+        <h2>Your cart</h2>
+        <!-- Cart items -->
+        <section class="cart-items">
+          <div class="item-label">
+            <p class="label-price-unit flex-justify-center">Price (unit)</p>
+            <p class="label-price flex-justify-center">Price</p>
+            <p class="label-quantity flex-justify-center">Quantity</p>
+            <p class="label-delete flex-justify-center">Delete</p>
+          </div>
+          <div class="items-wrapper"></div>
+          <div class="delete-all">
+            <p class="delete-all-js">
+              <i class="fa-solid fa-trash"></i>Delete all
+            </p>
+          </div>
+        </section>
+        <!-- Cart summary -->
+        <section class="cart-summary">
+          <div class="price-wrapper">
+            <div class="price-wrapper-top">
+              <p>Order value:</p>
+              <p class="item-price">249.99 zł</p>
+              <p>Shipping:</p>
+              <p class="item-shipping">Free!</p>
+            </div>
+            <div class="price-wrapper-bottom">
+              <p class="to-pay">Total:</p>
+              <p class="last-cost">249.99 zł</p>
+            </div>
+          </div>
+          <div class="cart-buttons">
+            <a href="index.html"><p>&lt;&nbsp;&nbsp;Continue shopping</p></a>
+            <button class="continue">Continue to checkout</button>
+          </div>
+        </section>
+      </article>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 All rights reserved</p>
+    </footer>
+    <script src="scripts/cart.js" type="module"></script>
+  </body>
 </html>
