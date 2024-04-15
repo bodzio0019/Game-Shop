@@ -8,4 +8,3 @@ It's a dynamic website resembling an online game store, crafted with HTML, CSS, 
 - Checkout page
 - Full RWD
 - Login page
-- Favicon
