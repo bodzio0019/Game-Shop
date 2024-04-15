@@ -6,6 +6,6 @@ It's a dynamic website resembling an online game store, crafted with HTML, CSS, 
 
 ## Future features:
 - Checkout page
-- full RWD
+- Full RWD
 - Login page
-- favicon
+- Favicon
