@@ -1,31 +1,25 @@
-import { data } from "../data/data.js";
 import { cart, renderCartIcon } from "../data/cart.js";
+import { fetchData } from "../utils/fetchData.js";
+import { renderItems } from "../utils/renderItems.js";
+import { search } from "../utils/search.js";
 
 // On start
-renderItems(data);
+let data = [];
+let dataFull = [];
+fetchData((fetchedData) => {
+  dataFull = fetchedData;
+  data = dataFull.filter((item) => {
+    return item.platform[0] === "PS4" || item.platform[1] === "PS4";
+  });
+  renderItems(data);
+});
 renderCartIcon();
 const form = document.forms.aside;
 let asideData = [];
 const select = document.querySelector("#sort");
 
 // Search
-document.querySelector(".search > i").addEventListener("click", () => {
-  const valueInput = document.querySelector(".search > input").value;
-  const value = valueInput.toLowerCase().replace(/[^a-z0-9]/g, "");
-  if (valueInput) {
-    const search = data.filter((item) => {
-      const name = item.name.toLowerCase().replace(/[^a-z0-9]/g, "");
-      return name.includes(value);
-    });
-    sessionStorage.setItem("search", JSON.stringify(search));
-    location.href = "search.html";
-  }
-});
-document.querySelector(".search > input").addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    document.querySelector(".search > i").click();
-  }
-});
+search(dataFull, "search.html");
 
 // Cart
 document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
@@ -207,35 +201,4 @@ function asideSort(data) {
       renderItems(data);
       break;
   }
-}
-
-// Items
-function renderItems(data) {
-  let html = ``;
-  data.forEach((data) => {
-    if (data.discount === 0) {
-      html += `<a href="item-pages/${data.page}.html">
-            <div class="game-item">
-            <img src="img/${data.image}.jpg" alt="Game picture" />
-            <p class="game-title">${data.name}</p>
-            <p class="game-price">${(data.price / 100).toFixed(2)} zł</p>
-            </div>
-            </a>`;
-    } else {
-      html += `<a href="item-pages/${data.page}.html">
-            <div class="game-item">
-            <img src="img/${data.image}.jpg" alt="Game picture" />
-            <p class="game-title">${data.name}</p>
-            <p class="game-price"><span style="color: rgb(190, 43, 43);">${(
-              data.discount / 100
-            ).toFixed(
-              2
-            )} zł</span>&nbsp;<span style="text-decoration: line-through; font-size: 0.8rem;">${(
-        data.price / 100
-      ).toFixed(2)} zł</span></p>
-            </div>
-            </a>`;
-    }
-  });
-  document.querySelector(".items").innerHTML = html;
 }
