@@ -1,14 +1,9 @@
 import { cart, renderCartIcon } from "../data/cart.js";
-import { fetchData } from "../utils/fetchData.js";
 import { search } from "../utils/search.js";
 
 // On start
-let data = [];
-fetchData((fetchedData) => {
-  data = fetchedData;
-  renderCart();
-  renderSum();
-});
+renderCart();
+renderSum();
 renderCartIcon();
 
 if (!cart.length) {
@@ -16,7 +11,7 @@ if (!cart.length) {
 }
 
 // Search
-search(data, "search.html");
+search("search.html");
 
 // Cart
 function renderCart() {

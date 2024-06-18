@@ -5,19 +5,17 @@ import { search } from "../utils/search.js";
 
 // On start
 let data = [];
-let dataFull = [];
-fetchData((fetchedData) => {
-  dataFull = fetchedData;
+let asideData = [];
+const form = document.forms.aside;
+fetchData().then((result) => {
+  const dataFull = result;
   data = dataFull.sort((a, b) => b.sort - a.sort).slice(0, 7);
   renderItems(data);
 });
 renderCartIcon();
-const form = document.forms.aside;
-let asideData = [];
-const select = document.querySelector("#sort");
 
 // Search
-search(dataFull, "search.html");
+search("search.html");
 
 // Cart
 document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
@@ -163,7 +161,7 @@ document.querySelector(".mobile-aside").addEventListener("click", () => {
 });
 
 // Sort
-select.addEventListener("change", () => {
+document.querySelector("#sort").addEventListener("change", () => {
   document.querySelector(".sort-disable").setAttribute("disabled", "");
   if (asideData == 0) {
     asideSort(data);
@@ -173,7 +171,7 @@ select.addEventListener("change", () => {
 });
 
 function asideSort(data) {
-  switch (select.value) {
+  switch (document.querySelector("#sort").value) {
     case "lowest price":
       data.sort((a, b) => {
         let first = a.discount || a.price;

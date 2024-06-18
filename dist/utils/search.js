@@ -1,14 +1,23 @@
-export function search(data, url) {
+export function search(url) {
   document.querySelector(".search > i").addEventListener("click", () => {
     const valueInput = document.querySelector(".search > input").value;
-    const value = valueInput.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const value = valueInput.trim("");
     if (valueInput) {
-      const search = data.filter((item) => {
-        const name = item.name.toLowerCase().replace(/[^a-z0-9]/g, "");
-        return name.includes(value);
-      });
-      sessionStorage.setItem("search", JSON.stringify(search));
-      location.href = url;
+      let search = [];
+      fetch(`/api/search/${value}`)
+        .then((result) => {
+          if (result.ok) {
+            return result.json();
+          } else {
+            throw new Error("Failed connection to the server");
+          }
+        })
+        .then((result) => {
+          search = result;
+          sessionStorage.setItem("search", JSON.stringify(search));
+          location.href = url;
+        })
+        .catch((err) => console.log(`GET error: ${err.message}`));
     }
   });
   document

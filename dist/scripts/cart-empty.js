@@ -1,14 +1,7 @@
-import { fetchData } from "../utils/fetchData.js";
 import { search } from "../utils/search.js";
 
-// On start
-let data = [];
-fetchData((fetchedData) => {
-  data = fetchedData;
-});
-
 // Search
-search(data, "search.html");
+search("search.html");
 
 // Mobile-Nav
 document.querySelector(".navbar-icon").addEventListener("click", () => {

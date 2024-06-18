@@ -5,14 +5,14 @@ import { search } from "../utils/search.js";
 // On start
 let data = [];
 let item = [];
-fetchData((fetchedData) => {
-  data = fetchedData;
+fetchData().then((result) => {
+  data = result;
   renderItem();
+  renderCartIcon();
 });
-renderCartIcon();
 
 // Search
-search(data, "../search.html");
+search("../search.html");
 
 // Cart icon
 document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
@@ -107,57 +107,63 @@ function renderItem() {
       item.price / 100
     ).toFixed(2)} zł</span>`;
   }
-}
 
-// Cart
-const form = document.forms.quantity;
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let matchItem;
+  // Cart
+  const form = document.forms.quantity;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let matchItem;
 
-  cart.forEach((i) => {
-    if (i.name === item.name) {
-      matchItem = i;
+    cart.forEach((i) => {
+      if (i.name === item.name) {
+        matchItem = i;
+      }
+    });
+
+    if (matchItem) {
+      matchItem.quantity += +form.quantity.value;
+    } else {
+      cart.push(item);
+      item.quantity = +(+form.quantity.value);
     }
+    renderCartIcon();
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.scrollTo(0, 0);
+    document.querySelector(".modal-cart").classList.toggle("modal-show");
+    document.querySelector(".overlay").classList.toggle("overlay-show");
   });
 
-  if (matchItem) {
-    matchItem.quantity += +form.quantity.value;
-  } else {
-    cart.push(item);
-    item.quantity = +(+form.quantity.value);
-  }
-  renderCartIcon();
-  localStorage.setItem("cart", JSON.stringify(cart));
-  window.scrollTo(0, 0);
-  document.querySelector(".modal-cart").classList.toggle("modal-show");
-  document.querySelector(".overlay").classList.toggle("overlay-show");
-});
+  // Item info
+  document.querySelector(".game-description").addEventListener("click", () => {
+    document.querySelector(".game-details").classList.remove("active-option");
+    document.querySelector(".game-description").classList.add("active-option");
+    document
+      .querySelector(".game-details-text")
+      .classList.remove("active-text");
+    document
+      .querySelector(".game-description-text")
+      .classList.add("active-text");
+  });
+  document.querySelector(".game-details").addEventListener("click", () => {
+    document
+      .querySelector(".game-description")
+      .classList.remove("active-option");
+    document.querySelector(".game-details").classList.add("active-option");
+    document
+      .querySelector(".game-description-text")
+      .classList.remove("active-text");
+    document.querySelector(".game-details-text").classList.add("active-text");
+  });
 
-// Item info
-document.querySelector(".game-description").addEventListener("click", () => {
-  document.querySelector(".game-details").classList.remove("active-option");
-  document.querySelector(".game-description").classList.add("active-option");
-  document.querySelector(".game-details-text").classList.remove("active-text");
-  document.querySelector(".game-description-text").classList.add("active-text");
-});
-document.querySelector(".game-details").addEventListener("click", () => {
-  document.querySelector(".game-description").classList.remove("active-option");
-  document.querySelector(".game-details").classList.add("active-option");
+  // Modal
+  document.querySelector(".modal-back").addEventListener("click", () => {
+    document.querySelector(".modal-cart").classList.toggle("modal-show");
+    document.querySelector(".overlay").classList.toggle("overlay-show");
+  });
+
   document
-    .querySelector(".game-description-text")
-    .classList.remove("active-text");
-  document.querySelector(".game-details-text").classList.add("active-text");
-});
-
-// Modal
-document.querySelector(".modal-back").addEventListener("click", () => {
-  document.querySelector(".modal-cart").classList.toggle("modal-show");
-  document.querySelector(".overlay").classList.toggle("overlay-show");
-});
-
-document
-  .querySelector(".modal-buttons > button")
-  .addEventListener("click", () => {
-    location.href = "../cart.html";
-  });
+    .querySelector(".modal-buttons > button")
+    .addEventListener("click", () => {
+      location.href = "../cart.html";
+    });
+}

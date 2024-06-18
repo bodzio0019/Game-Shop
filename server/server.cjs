@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const URL = require("./pass.cjs");
-const showGames = require("./controllers/games.cjs");
+const { showGames, search } = require("./controllers/games.cjs");
 
 // Middlewares
 const app = express();
@@ -26,3 +26,5 @@ mongoose
 
 // REST API
 app.get("/api/data", showGames);
+
+app.get("/api/search/:name", search);

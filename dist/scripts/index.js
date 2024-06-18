@@ -5,17 +5,16 @@ import { search } from "../utils/search.js";
 
 // On start
 let data = [];
-fetchData((fetchedData) => {
-  data = fetchedData;
+let asideData = [];
+const form = document.forms.aside;
+fetchData().then((result) => {
+  data = result;
   renderItems(data);
 });
 renderCartIcon();
-const form = document.forms.aside;
-let asideData = [];
-const select = document.querySelector("#sort");
 
 // Search
-search(data, "search.html");
+search("search.html");
 
 // Cart
 document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
@@ -161,7 +160,7 @@ document.querySelector(".mobile-aside").addEventListener("click", () => {
 });
 
 // Sort
-select.addEventListener("change", () => {
+document.querySelector("#sort").addEventListener("change", () => {
   document.querySelector(".sort-disable").setAttribute("disabled", "");
   if (asideData == 0) {
     asideSort(data);
@@ -171,7 +170,7 @@ select.addEventListener("change", () => {
 });
 
 function asideSort(data) {
-  switch (select.value) {
+  switch (document.querySelector("#sort").value) {
     case "lowest price":
       data.sort((a, b) => {
         let first = a.discount || a.price;

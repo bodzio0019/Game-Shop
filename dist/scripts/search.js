@@ -1,37 +1,21 @@
 import { cart, renderCartIcon } from "../data/cart.js";
 import { fetchData } from "../utils/fetchData.js";
 import { renderItems } from "../utils/renderItems.js";
+import { search as searchFunc } from "../utils/search.js";
 
 // On start
 let data = [];
+let asideData = [];
+const form = document.forms.aside;
 const search = JSON.parse(sessionStorage.getItem("search")) || [];
-fetchData((fetchedData) => {
-  data = fetchedData;
+fetchData().then((result) => {
+  data = result;
   renderItems(search);
 });
 renderCartIcon();
-const form = document.forms.aside;
-let asideData = [];
-const select = document.querySelector("#sort");
 
 // Search
-document.querySelector(".search > i").addEventListener("click", () => {
-  const valueInput = document.querySelector(".search > input").value;
-  const value = valueInput.toLowerCase().replace(/[^a-z0-9]/g, "");
-  if (valueInput) {
-    const search = data.filter((item) => {
-      const name = item.name.toLowerCase().replace(/[^a-z0-9]/g, "");
-      return name.includes(value);
-    });
-    sessionStorage.setItem("search", JSON.stringify(search));
-    location.reload();
-  }
-});
-document.querySelector(".search > input").addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    document.querySelector(".search > i").click();
-  }
-});
+searchFunc("search.html");
 
 // Cart
 document.querySelector(".cart-price-wrapper").addEventListener("click", () => {
@@ -180,7 +164,7 @@ document.querySelector(".mobile-aside").addEventListener("click", () => {
 });
 
 // Sort
-select.addEventListener("change", () => {
+document.querySelector("#sort").addEventListener("change", () => {
   document.querySelector(".sort-disable").setAttribute("disabled", "");
   if (asideData == 0) {
     asideSort(search);
@@ -190,7 +174,7 @@ select.addEventListener("change", () => {
 });
 
 function asideSort(data) {
-  switch (select.value) {
+  switch (document.querySelector("#sort").value) {
     case "lowest price":
       data.sort((a, b) => {
         let first = a.discount || a.price;
