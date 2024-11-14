@@ -36,7 +36,7 @@ function renderItem() {
   });
   item = result[0];
   const htmlHeader = `<div class="item-image">
-    <img src="../img/${item.image}.jpg" alt="Game picture" />
+    <img src="../img/${item.image}.webp" alt="Game picture" />
     </div>
     <div class="item-cart">
     <h2>${item.name}</h2>
@@ -57,7 +57,7 @@ function renderItem() {
     <div class="modal-top"><p>Added to cart</p></div>
     <div class="modal-bottom"><div class="modal-img"><img src="../img/${
       item.image
-    }.jpg" alt="Game picture" /></div><div class="modal-info"><p class="modal-name">${
+    }.webp" alt="Game picture" /></div><div class="modal-info"><p class="modal-name">${
     item.name
   }</p><p class="modal-price">${((item.discount || item.price) / 100).toFixed(
     2

@@ -20,7 +20,7 @@ function renderCart() {
     html += `<div class="item-details">
         <p class="details-img flex-justify-center"><img src="img/${
           item.image
-        }.jpg" alt="Game picture" /></p>
+        }.webp" alt="Game picture" /></p>
         <div class="details-name"><a href="item-pages/${item.page}.html"><p>${
       item.name
     }</p></a></div>

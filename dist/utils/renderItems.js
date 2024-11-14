@@ -4,7 +4,7 @@ export function renderItems(data) {
     if (data.discount === 0) {
       html += `<a href="item-pages/${data.page}.html">
               <div class="game-item">
-              <img src="img/${data.image}.jpg" alt="Game picture" />
+              <img src="img/${data.image}.webp" alt="Game picture" />
               <p class="game-title">${data.name}</p>
               <p class="game-price">${(data.price / 100).toFixed(2)} zł</p>
               </div>
@@ -12,7 +12,7 @@ export function renderItems(data) {
     } else {
       html += `<a href="item-pages/${data.page}.html">
               <div class="game-item">
-              <img src="img/${data.image}.jpg" alt="Game picture" />
+              <img src="img/${data.image}.webp" alt="Game picture" />
               <p class="game-title">${data.name}</p>
               <p class="game-price"><span style="color: rgb(190, 43, 43);">${(
                 data.discount / 100
